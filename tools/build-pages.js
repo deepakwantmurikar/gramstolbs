@@ -19,6 +19,7 @@ const ROOT = path.join(__dirname, '..');
 const SITE = 'https://gramstolbs.com';
 const AUTHOR = 'Deepak Wantmurikar';
 const EMAIL = 'contact@gramstolbs.com';
+const GA_ID = 'G-L125VQ750L';   // Google Analytics 4 measurement ID
 const UPDATED = '19 August 2026';
 
 /* ---------------------------------------------------------------- chrome -- */
@@ -31,6 +32,17 @@ function head(p, page) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${page.title}</title>
 <meta name="description" content="${page.desc}">
+
+<!-- Google tag (gtag.js). Loaded async so it never blocks rendering.
+     Disclosed in the privacy policy under Cookies and Analytics. -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${GA_ID}');
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -895,6 +907,7 @@ ${breadcrumbHTML(p, 'Privacy Policy')}
           <li><a href="#conversions">Your conversions</a></li>
           <li><a href="#collect">What is collected</a></li>
           <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#analytics">Analytics</a></li>
           <li><a href="#advertising">Advertising</a></li>
           <li><a href="#gdpr">GDPR</a></li>
           <li><a href="#ccpa">CCPA</a></li>
@@ -923,10 +936,11 @@ ${breadcrumbHTML(p, 'Privacy Policy')}
 
     <h2 id="collect">What is collected</h2>
 
-    <p>This site does not ask for or store personal information. There are no accounts, no
-    sign-up, no newsletter and no contact form. If you email
+    <p>This site does not ask for or store personal information directly. There are no
+    accounts, no sign-up, no newsletter and no contact form. If you email
     <a href="mailto:${EMAIL}">${EMAIL}</a>, that message and your address are held only for as
-    long as needed to reply.</p>
+    long as needed to reply. Usage data is collected by Google Analytics as described below,
+    and advertising data by Google AdSense.</p>
 
     <p>Like nearly all websites, the hosting provider records standard server logs, which may
     include IP address, browser type, referring page and time of request. These are used to
@@ -934,10 +948,30 @@ ${breadcrumbHTML(p, 'Privacy Policy')}
 
     <h2 id="cookies">Cookies</h2>
 
-    <p>This site sets no cookies of its own. It uses no analytics cookies and no tracking
-    pixels belonging to the site itself. Cookies may be set by the advertising described in
-    the next section, and you can block or delete cookies in your browser settings at any
-    time without losing access to any converter here.</p>
+    <p>This site itself sets no cookies. Cookies are set by two third-party services: Google
+    Analytics, described in the next section, and the advertising described after it. You can
+    block or delete cookies in your browser settings at any time, and every converter on this
+    site continues to work normally without them, because the conversions are calculated by
+    your browser rather than by any service that uses cookies.</p>
+
+    <h2 id="analytics">Analytics</h2>
+
+    <p>This site uses Google Analytics 4 to count visits and see which pages are read. It sets
+    cookies in your browser, typically named <code>_ga</code> and <code>_ga_&lt;id&gt;</code>,
+    which distinguish one visitor from another across pages and visits.</p>
+
+    <p>What is collected is limited to standard web measurement: the pages you view, how long
+    you stay, the site or search that referred you, your device and browser type, and an
+    approximate location derived from your IP address. Google states that Analytics 4 does not
+    log or store full IP addresses. No weight you type into any converter is collected,
+    because conversions never leave your browser in the first place.</p>
+
+    <p>You can prevent Google Analytics entirely by installing the
+    <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google Analytics Opt-out
+    Browser Add-on</a>, by blocking cookies in your browser, or by using any tracker-blocking
+    extension. Doing so has no effect on the converters. How Google handles this data is
+    described in the <a href="https://policies.google.com/privacy" rel="noopener">Google
+    Privacy Policy</a>.</p>
 
     <h2 id="advertising">Advertising and Google AdSense</h2>
 
@@ -964,9 +998,10 @@ ${breadcrumbHTML(p, 'Privacy Policy')}
     To exercise any right, email <a href="mailto:${EMAIL}">${EMAIL}</a>. You also have the
     right to lodge a complaint with your national data protection authority.</p>
 
-    <p>Where advertising cookies require consent, that consent is requested before such
-    cookies are set, and it can be withdrawn at any time through your browser settings or
-    through the Google Ads Settings link above.</p>
+    <p>Where analytics or advertising cookies require consent, that consent is requested
+    before such cookies are set, and it can be withdrawn at any time through your browser
+    settings, through the Google Analytics opt-out add-on, or through the Google Ads Settings
+    link above.</p>
 
     <h2 id="ccpa">Your rights under CCPA</h2>
 
