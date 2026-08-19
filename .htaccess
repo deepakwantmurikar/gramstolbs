@@ -60,8 +60,11 @@ ErrorDocument 404 /404.html
   Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Block access to the build tooling and notes, which are not part of the site
-<FilesMatch "^(CLAUDE\.md|.*\.js\.map)$">
+# Deploying straight from Git puts the whole repository on the server, including
+# the build scripts and the internal notes. None of that is part of the website,
+# so it is blocked here rather than being served at a public URL.
+<FilesMatch "\.(md|map|json|lock)$">
   Require all denied
 </FilesMatch>
 RedirectMatch 404 ^/(tools|Docs)/
+RedirectMatch 404 ^/\.git
