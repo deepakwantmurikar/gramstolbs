@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — How gramstolbs.com Calculates Conversions</title>
+<meta name="description" content="The exact constants, formulas, rounding rule and primary sources used by every converter on gramstolbs.com.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#A87C32">
+
+<link rel="canonical" href="https://gramstolbs.com/methodology/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gramstolbs.com/methodology/">
+<meta property="og:site_name" content="gramstolbs.com">
+<meta property="og:title" content="Methodology — How gramstolbs.com Calculates Conversions">
+<meta property="og:description" content="The exact constants, formulas, rounding rule and primary sources used by every converter on gramstolbs.com.">
+<meta property="og:image" content="https://gramstolbs.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Grams to Lbs converter — 500 g equals 1.1023 lb, or 1 lb 1.64 oz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology — How gramstolbs.com Calculates Conversions">
+<meta name="twitter:description" content="The exact constants, formulas, rounding rule and primary sources used by every converter on gramstolbs.com.">
+<meta name="twitter:image" content="https://gramstolbs.com/assets/img/og-image.png">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gramstolbs.com/#org",
+      "name": "gramstolbs.com",
+      "url": "https://gramstolbs.com/",
+      "email": "contact@gramstolbs.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gramstolbs.com/#author",
+      "name": "Deepak Wantmurikar",
+      "url": "https://gramstolbs.com/about/",
+      "jobTitle": "Web Developer and Blogger",
+      "description": "Web developer and blogger who builds and maintains measurement conversion tools, including gramstolbs.com and gramstocup.com.",
+      "email": "contact@gramstolbs.com",
+      "image": "https://gramstolbs.com/assets/img/deepak-wantmurikar.jpg",
+      "sameAs": [
+        "https://gramstocup.com"
+      ],
+      "knowsAbout": [
+        "Unit conversion",
+        "Weight and mass measurement",
+        "Avoirdupois and troy weight systems",
+        "Web development"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Methodology",
+      "url": "https://gramstolbs.com/methodology/",
+      "author": {
+        "@id": "https://gramstolbs.com/#author"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gramstolbs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Methodology",
+          "item": "https://gramstolbs.com/methodology/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../">
+      <img class="logo-mark" src="../assets/img/logo.svg" alt="" width="32" height="32">
+      <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">Grams to Lbs</a></li>
+        <li><a href="../lbs-to-grams/">Lbs to Grams</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <span class="eyebrow"><span class="dot" aria-hidden="true"></span> How the numbers are produced</span>
+    <h1>Methodology</h1>
+    <p>Every constant, formula and rounding decision used on this site, stated in full so
+    the results can be checked independently.</p>
+  </section>
+
+  <nav class="breadcrumb wrap" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li aria-current="page">Methodology</li>
+    </ol>
+  </nav>
+
+  <div class="article">
+    <aside class="toc">
+      <h2>On this page</h2>
+      <nav aria-label="Article contents">
+        <ul>
+          <li><a href="#constants">Constants</a></li>
+          <li><a href="#formulas">Formulas</a></li>
+          <li><a href="#rounding">Rounding rule</a></li>
+          <li><a href="#testing">How it is tested</a></li>
+          <li><a href="#privacy">Where it runs</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  <section class="prose">
+
+    <div class="byline">
+      <span><span class="dot" aria-hidden="true"></span> By Deepak Wantmurikar</span>
+      <span>Last reviewed: 19 August 2026</span>
+    </div>
+
+    <p class="lead">Every conversion on this site derives from three exact constants and
+    two arithmetic operations. Nothing is estimated, approximated or looked up from a
+    table, and the same constants are used on every page.</p>
+
+    <h2 id="constants">The constants</h2>
+
+    <p>Three definitions produce every figure on this site. Each is exact by international
+    agreement rather than measured, so none carries an uncertainty:</p>
+
+    <div class="worked">
+      GRAMS_PER_POUND&nbsp;&nbsp;&nbsp;&nbsp; = <strong>453.59237</strong><br>
+      GRAMS_PER_OUNCE&nbsp;&nbsp;&nbsp;&nbsp; = <strong>28.349523125</strong><br>
+      GRAMS_PER_TROY_OUNCE = <strong>31.1034768</strong>
+    </div>
+
+    <p>One international avoirdupois pound is exactly 453.59237 grams, fixed by the
+    International Yard and Pound Agreement of 1959. One avoirdupois ounce is exactly
+    28.349523125 grams, being one sixteenth of that pound. One troy ounce is exactly
+    31.1034768 grams and is used only for precious metals; twelve troy ounces make a troy
+    pound of 373.2417216 grams, which is lighter than an ordinary pound.</p>
+
+    <p>These three values are declared once, in a single file, and every page imports them.
+    No conversion number is written a second time anywhere on the site, which removes the
+    possibility of two pages disagreeing.</p>
+
+    <h2 id="formulas">The formulas</h2>
+
+    <p>Each conversion is a single division or multiplication against one of the three
+    constants. The complete set is:</p>
+
+    <div class="worked">
+      pounds&nbsp;&nbsp;&nbsp;&nbsp; = grams &divide; 453.59237<br>
+      grams&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = pounds &times; 453.59237<br>
+      ounces&nbsp;&nbsp;&nbsp;&nbsp; = grams &divide; 28.349523125<br>
+      troy oz&nbsp;&nbsp;&nbsp; = grams &divide; 31.1034768<br>
+      lb + oz&nbsp;&nbsp;&nbsp; = whole part of (grams &divide; 453.59237),<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then remainder &times; 16
+    </div>
+
+    <p>The pounds-and-ounces breakdown takes the whole number of pounds first, then
+    multiplies the leftover decimal by 16 because one pound contains 16 ounces. Where
+    rounding pushes the ounces to a full 16, one pound is added and the ounces reset to
+    zero, so the display never reads something impossible such as 2 lb 16 oz.</p>
+
+    <h2 id="rounding">The rounding rule</h2>
+
+    <p>Values are rounded half away from zero at the precision you select. Because the
+    converter accepts only values of zero or more, this is the same as rounding half up:
+    a digit sequence ending in exactly 5 rounds upward. You can choose 2, 4 or 6 decimal
+    places, and the underlying calculation always runs at full precision with rounding
+    applied only at the moment of display.</p>
+
+    <p>Rounding is the reason two converters can disagree in the fourth decimal place while
+    both being correct. 1,000 grams equals 2.2046 pounds at four decimals and 2.204623
+    pounds at six; the difference of 0.000023 pounds is roughly 10 milligrams. For everyday
+    weighing two decimals is sufficient. Six is worth using for precious metals, laboratory
+    work, or any situation where the figure will be multiplied by a large quantity.</p>
+
+    <h2 id="testing">How the calculations are tested</h2>
+
+    <p>Every conversion function is covered by an automated test suite that runs in the
+    browser. The suite checks each function against independently known values, including
+    1,000 g = 2.20462262 lb, 453.59237 g = 1 lb exactly, 100 g = 3.5274 oz and
+    31.1034768 g = 1 troy oz, and it also verifies the behaviour for empty input, negative
+    numbers, zero, non-numeric text and very large numbers.</p>
+
+    <p>The tests are public. Opening <code>/test.html</code> on this site runs them live and
+    prints a pass or fail line for every case, so the arithmetic behind the converter can be
+    verified without taking anything here on trust.</p>
+
+    <h2 id="privacy">Where the calculation runs</h2>
+
+    <p>All arithmetic runs in your own browser. No weight you type is transmitted, logged or
+    stored on a server, because there is no server-side calculation of any kind. The
+    converter continues to work with no network connection once the page has loaded.</p>
+
+    <h2 id="sources">Primary sources</h2>
+
+    <div class="sources">
+      <ul>
+        <li><a href="https://www.nist.gov/pml/special-publication-811" rel="noopener">NIST Special Publication 811</a>, <em>Guide for the Use of the International System of Units (SI)</em> &mdash; exact conversion factors</li>
+        <li><a href="https://www.nist.gov/pml/owm/publications" rel="noopener">NIST Handbook 44, Appendix C</a> &mdash; general tables of units of measurement</li>
+        <li><a href="https://www.bipm.org/en/publications/si-brochure" rel="noopener">BIPM, <em>The International System of Units (SI)</em>, 9th edition</a> &mdash; definition of the kilogram</li>
+        <li>International Yard and Pound Agreement, 1959 &mdash; defines the international avoirdupois pound as exactly 453.59237 g</li>
+      </ul>
+    </div>
+
+    <p>If you find a figure on this site that disagrees with any of those sources, please
+    <a href="../contact/">report it</a> and it will be corrected.</p>
+
+  </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <span class="logo">
+          <img class="logo-mark" src="../assets/img/logo.svg" alt="" width="32" height="32">
+          <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
+        </span>
+        <p class="footer-desc">A focused grams to pounds converter. Every result is given in
+        decimal pounds and in pounds with ounces, calculated in your browser using the exact
+        international definition of the pound.</p>
+        <span class="footer-fact">1 lb = 453.59237 g exactly</span>
+      </div>
+
+      <div class="footer-col">
+        <h3>Converters</h3>
+        <ul>
+          <li><a href="../">Grams to Lbs</a></li>
+          <li><a href="../lbs-to-grams/">Lbs to Grams</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/baby-weight-grams-to-pounds/">Baby Birth Weight</a></li>
+          <li><a href="../guides/gold-grams-to-pounds-troy/">Gold &amp; Troy Ounces</a></li>
+          <li><a href="../guides/shipping-weight-grams-to-pounds/">Shipping Weight</a></li>
+          <li><a href="../guides/food-label-grams-to-pounds/">Food Labels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Trust</h3>
+        <ul>
+          <li><a href="../methodology/">Methodology</a></li>
+          <li><a href="../editorial-policy/">Editorial Policy</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          <li><a href="../terms/">Terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> gramstolbs.com &middot; Written by Deepak Wantmurikar</p>
+      <p>Every conversion runs in your browser. Nothing you type is sent to a server.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../assets/js/convert.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

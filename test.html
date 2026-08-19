@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversion engine tests — gramstolbs.com</title>
+<meta name="description" content="Live test suite for the conversion functions used on gramstolbs.com, checked against known values.">
+<!-- Publicly linked from the methodology and editorial pages as a trust signal, so it
+     must stay crawlable — but it is a utility page, not content, so keep it out of the
+     index. "follow" lets crawlers still pass through its links. -->
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  body { font-family: monospace; background: #FAFAF8; color: #151A21; padding: 2rem; }
+  h1 { font-size: 1.2rem; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 0.3rem 0; border-bottom: 1px solid #E6E9E6; }
+  .pass { color: #1a7a1a; }
+  .fail { color: #c0392b; font-weight: bold; }
+  #summary { margin-top: 1.5rem; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>convert.js — test results</h1>
+<ul id="results"></ul>
+<div id="summary"></div>
+
+<script src="assets/js/convert.js"></script>
+<script>
+  const results = [];
+
+  function assertEqual(name, actual, expected) {
+    const pass = actual === expected;
+    results.push({ name, actual, expected, pass });
+  }
+
+  function assertClose(name, actual, expected, tolerance) {
+    const pass = typeof actual === 'number' && Math.abs(actual - expected) <= tolerance;
+    results.push({ name, actual, expected, pass });
+  }
+
+  // --- Known-value tests from the build plan ---
+
+  assertClose(
+    '1000 g = 2.20462262 lb',
+    roundTo(gramsToPounds(1000), 8),
+    2.20462262,
+    0.000000005
+  );
+
+  assertEqual(
+    '453.59237 g = 1 lb exactly',
+    gramsToPounds(453.59237),
+    1
+  );
+
+  (function () {
+    const r = gramsToPoundsOunces(3500);
+    assertEqual('3500 g = 7 lb (pounds part)', r.pounds, 7);
+    assertClose('3500 g = 7 lb 11.4589 oz (ounces part)', roundTo(r.ounces, 4), 11.4589, 0.00005);
+  })();
+
+  assertClose(
+    '100 g = 3.5274 oz',
+    roundTo(gramsToOunces(100), 4),
+    3.5274,
+    0.00005
+  );
+
+  assertClose(
+    '31.1034768 g = 1 troy oz',
+    gramsToTroyOunces(31.1034768),
+    1,
+    0.0000001
+  );
+
+  // --- Round-trip and adjacent-unit checks ---
+
+  assertClose(
+    'poundsToGrams(1) = 453.59237 g',
+    poundsToGrams(1),
+    453.59237,
+    0.00001
+  );
+
+  assertClose(
+    '1 kg = 2.20462262 lb',
+    roundTo(kilogramsToPounds(1), 8),
+    2.20462262,
+    0.000000005
+  );
+
+  assertEqual(
+    'roundTo(2.20462262, 2) = 2.2',
+    roundTo(2.20462262, 2),
+    2.2
+  );
+
+  // --- Edge cases: never return NaN, return null instead ---
+
+  assertEqual('empty input -> null', gramsToPounds(''), null);
+  assertEqual('negative number -> null', gramsToPounds(-100), null);
+  assertEqual('zero -> 0 (valid, not null)', gramsToPounds(0), 0);
+  assertEqual('non-numeric text -> null', gramsToPounds('abc'), null);
+  assertEqual('poundsToGrams non-numeric -> null', poundsToGrams('lots'), null);
+  assertEqual('gramsToPoundsOunces negative -> null', gramsToPoundsOunces(-5), null);
+  assertEqual('gramsToOunces empty -> null', gramsToOunces(''), null);
+  assertEqual('gramsToTroyOunces non-numeric -> null', gramsToTroyOunces('x'), null);
+  assertEqual('kilogramsToPounds negative -> null', kilogramsToPounds(-1), null);
+
+  (function () {
+    const big = gramsToPounds(1e15);
+    const pass = typeof big === 'number' && Number.isFinite(big);
+    results.push({ name: 'very large number -> finite result, not null/NaN', actual: big, expected: 'finite number', pass });
+  })();
+
+  assertEqual('Infinity-producing input -> null', gramsToPounds('1e400'), null);
+
+  // --- Render ---
+
+  const list = document.getElementById('results');
+  let passCount = 0;
+  results.forEach((r) => {
+    const li = document.createElement('li');
+    li.className = r.pass ? 'pass' : 'fail';
+    li.textContent = (r.pass ? 'PASS — ' : 'FAIL — ') + r.name +
+      '  (actual: ' + JSON.stringify(r.actual) + ', expected: ' + JSON.stringify(r.expected) + ')';
+    list.appendChild(li);
+    if (r.pass) passCount++;
+  });
+
+  document.getElementById('summary').textContent =
+    passCount + ' / ' + results.length + ' tests passed';
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# ads.txt for gramstolbs.com
+# After AdSense approval add exactly ONE line, in this form:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# Only one publisher ID may ever appear in this file or anywhere in the site's HTML.

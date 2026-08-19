@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300"
+     role="img" aria-labelledby="sd-title sd-desc">
+  <title id="sd-title">Diagram: a kitchen scale reading 500 grams converted to pounds</title>
+  <desc id="sd-desc">An illustration of a digital kitchen scale showing 500 g, with the
+  equivalent shown as 1.1023 pounds, or 1 pound 1.64 ounces.</desc>
+
+  <!-- Illustration, not a photograph. Flat vector in the site palette. -->
+
+  <g fill="none" stroke="#151A21" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- bowl sitting on the platform -->
+    <path d="M126 96 h108 a6 6 0 0 1 6 6 c0 22 -18 34 -60 34 s-60 -12 -60 -34 a6 6 0 0 1 6 -6 z"
+          fill="#F7F0E4"/>
+    <path d="M120 96 h120" stroke="#A87C32" stroke-width="3"/>
+
+    <!-- weighing platform -->
+    <rect x="60" y="146" width="240" height="16" rx="8" fill="#E4E7E3"/>
+
+    <!-- pillar between platform and body -->
+    <path d="M164 162 h32 v14 h-32 z" fill="#E4E7E3"/>
+
+    <!-- scale body -->
+    <rect x="84" y="176" width="192" height="86" rx="12" fill="#FFFFFF"/>
+
+    <!-- display panel -->
+    <rect x="104" y="192" width="152" height="44" rx="6" fill="#151A21" stroke="none"/>
+
+    <!-- control buttons -->
+    <circle cx="128" cy="250" r="6" fill="#E4E7E3"/>
+    <circle cx="150" cy="250" r="6" fill="#E4E7E3"/>
+    <circle cx="232" cy="250" r="6" fill="#A87C32" stroke="#A87C32"/>
+
+    <!-- feet -->
+    <path d="M104 262 v8 M256 262 v8"/>
+  </g>
+
+  <!-- the reading on the display -->
+  <text x="180" y="222" text-anchor="middle"
+        font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="26" font-weight="600"
+        fill="#F7F0E4" letter-spacing="1">500 g</text>
+
+  <!-- arrow across to the converted value -->
+  <g stroke="#A87C32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M330 200 h64"/>
+    <path d="M384 191 l10 9 -10 9"/>
+  </g>
+
+  <!-- converted result card -->
+  <g>
+    <rect x="424" y="120" width="300" height="72" rx="10" fill="#FFFFFF" stroke="#E4E7E3" stroke-width="1.6"/>
+    <text x="444" y="147" font-family="'Plus Jakarta Sans', sans-serif" font-size="12"
+          font-weight="700" letter-spacing="1.6" fill="#4A5560">DECIMAL LBS</text>
+    <text x="444" y="177" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="27"
+          font-weight="600" fill="#151A21">1.1023 lb</text>
+
+    <rect x="424" y="204" width="300" height="72" rx="10" fill="#FFFFFF" stroke="#E4E7E3" stroke-width="1.6"/>
+    <text x="444" y="231" font-family="'Plus Jakarta Sans', sans-serif" font-size="12"
+          font-weight="700" letter-spacing="1.6" fill="#4A5560">POUNDS AND OUNCES</text>
+    <text x="444" y="261" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="27"
+          font-weight="600" fill="#151A21">1 lb 1.64 oz</text>
+  </g>
+
+  <!-- the formula, tying the two sides together -->
+  <text x="362" y="252" text-anchor="middle"
+        font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="12" fill="#A87C32">
+    &#247; 453.59237
+  </text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Grams to Lbs">
+  <!-- Balance scale: the subject of the site. Left pan carries the gram
+       weight, right pan the pound weight, and the beam sits level because
+       453.59237 g and 1 lb are the same mass. -->
+  <g fill="none" stroke="#A87C32" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- central column and base -->
+    <path d="M16 7.5v17"/>
+    <path d="M11 25.5h10"/>
+    <!-- the beam -->
+    <path d="M5 10.5h22"/>
+    <!-- pan hangers -->
+    <path d="M7.5 10.5 4.5 17M7.5 10.5 10.5 17"/>
+    <path d="M24.5 10.5 21.5 17M24.5 10.5 27.5 17"/>
+    <!-- pans -->
+    <path d="M3 17h9M20 17h9"/>
+  </g>
+  <!-- the pivot, filled so it reads as the fulcrum -->
+  <circle cx="16" cy="10.5" r="2.4" fill="#A87C32"/>
+  <circle cx="16" cy="10.5" r="0.9" fill="#FFFFFF"/>
+</svg>

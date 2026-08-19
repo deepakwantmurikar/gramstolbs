@@ -1,0 +1,22 @@
+# Internal working files — not part of the website.
+# If you make the repository private you can safely remove these two lines and
+# keep the planning notes under version control as well.
+CLAUDE.md
+Docs/
+
+# Operating system clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Scratch files from local testing (the leading underscore is the convention
+# used while building; nothing with this prefix belongs in the site)
+_*.html
+_*.js
+
+# Editor folders
+.vscode/
+.idea/
+
+# Dependencies — this project has none, but this prevents an accidental commit
+node_modules/

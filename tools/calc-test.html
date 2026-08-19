@@ -1,0 +1,160 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>calc test</title></head>
+<body style="font:12px/1.6 monospace;padding:12px">
+<div id="out">running…</div>
+<script>
+const results = [];
+function t(name, actual, expected) {
+  const pass = String(actual) === String(expected);
+  results.push({ name, actual, expected, pass });
+}
+
+function load(url) {
+  return new Promise(res => {
+    const f = document.createElement('iframe');
+    f.width = 1200; f.height = 900; f.src = url;
+    f.style.cssText = 'position:absolute;left:-9999px;border:0';
+    f.onload = () => res(f);
+    document.body.appendChild(f);
+  });
+}
+
+function api(f) {
+  const d = f.contentDocument;
+  const i = d.getElementById('value-input');
+  return {
+    d, i,
+    set(v) { i.value = v; i.dispatchEvent(new Event('input')); },
+    prec(p) { const r = d.querySelector('input[name="precision"][value="' + p + '"]'); r.checked = true; r.dispatchEvent(new Event('change')); },
+    a: () => d.getElementById('value-a').textContent,
+    b: () => d.getElementById('value-b').textContent,
+    c: () => d.getElementById('value-c').textContent,
+    copyA: () => d.getElementById('value-a').dataset.copy,
+    labels: () => [d.getElementById('label-a'), d.getElementById('label-b'), d.getElementById('label-c')].map(e => e.textContent).join('|'),
+    swap() { d.getElementById('swap-btn').click(); },
+    chips: () => [...d.querySelectorAll('.chip')].map(c => c.textContent.trim()),
+    pressed: () => [...d.querySelectorAll('.chip')].filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.textContent.trim()),
+    clickChip(n) { [...d.querySelectorAll('.chip')].find(c => c.textContent.trim() === n).click(); },
+    arm: () => d.getElementById('beam-arm').style.transform,
+    weight: () => d.getElementById('beam-weight').style.left,
+    live: () => d.querySelector('.results').getAttribute('aria-live'),
+    inputLabel: () => d.getElementById('input-label').textContent,
+    suffix: () => d.getElementById('unit-suffix').textContent
+  };
+}
+
+(async () => {
+  /* ================= HOMEPAGE: grams -> lbs ================= */
+  const g = api(await load('/'));
+
+  t('loads with 500 g prefilled', g.i.value, '500');
+  t('500 g decimal', g.a(), '1.1023 lb');
+  t('500 g lb+oz', g.b(), '1 lb 1.6370 oz');
+  t('500 g total oz', g.c(), '17.6370 oz');
+  t('aria-live on results', g.live(), 'polite');
+
+  g.set('1000');
+  t('1000 g decimal', g.a(), '2.2046 lb');
+  t('1000 g lb+oz', g.b(), '2 lb 3.2740 oz');
+  t('1000 g total oz', g.c(), '35.2740 oz');
+
+  g.set('3500');
+  t('3500 g lb+oz', g.b(), '7 lb 11.4589 oz');
+
+  g.set('453.59237');
+  t('exactly 1 lb', g.a(), '1.0000 lb');
+  t('exactly 1 lb -> 1 lb 0 oz', g.b(), '1 lb 0.0000 oz');
+
+  /* precision switching */
+  g.prec(2); g.set('1000');
+  t('1000 g @2dp', g.a(), '2.20 lb');
+  g.prec(6);
+  t('1000 g @6dp', g.a(), '2.204623 lb');
+  g.prec(4);
+  t('1000 g @4dp', g.a(), '2.2046 lb');
+
+  /* the 16-ounce carry boundary */
+  g.prec(2); g.set('453.58');
+  t('carry: 453.58 g @2dp is 1 lb 0.00 oz not 0 lb 16.00 oz', g.b(), '1 lb 0.00 oz');
+  g.prec(4);
+
+  /* edge cases */
+  g.set('');      t('empty -> dash', g.a(), '—');
+  g.set('abc');   t('text -> dash', g.a(), '—');
+  g.set('-5');    t('negative -> dash', g.a(), '—');
+  g.set('0');     t('zero -> 0.0000 lb', g.a(), '0.0000 lb');
+  g.set('0.001'); t('tiny value', g.a(), '0.0000 lb');
+  g.set('1e6');   t('1,000,000 g grouped', g.a(), '2,204.6226 lb');
+  g.set('999999999'); t('very large finite', g.a(), '2,204,622.6196 lb');
+
+  /* clipboard payload must be plain, no thousands separators */
+  g.set('1000000');
+  t('copy value has no commas', g.copyA(), '2204.6226');
+
+  /* quick-pick chips */
+  g.set('500');
+  t('chip 500 g marked pressed', g.pressed().join(','), '500 g');
+  g.set('1234');
+  t('no chip pressed for 1234', g.pressed().length, 0);
+  g.clickChip('250 g');
+  t('clicking chip sets value', g.i.value, '250');
+  t('clicking chip converts', g.a(), '0.5512 lb');
+
+  /* balance beam */
+  g.set('2000');
+  t('beam at max tilts 4deg', g.arm(), 'rotate(4deg)');
+  t('beam weight at 100%', g.weight(), '100%');
+  g.set('500');
+  t('beam at quarter tilts 1deg', g.arm(), 'rotate(1deg)');
+  g.set('');
+  t('beam resets when empty', g.arm(), 'rotate(0deg)');
+
+  /* swap behaviour */
+  g.set('1000'); g.prec(6); g.swap();
+  t('swap changes input label', g.inputLabel(), 'Pounds (lbs)');
+  t('swap changes suffix', g.suffix(), 'lb');
+  t('swap clears the field', g.i.value, '');
+  t('swap rebuilds chips', g.chips().join(','), '0.5 lb,1 lb,2 lb,5 lb,10 lb');
+  t('swap changes result labels', g.labels(), 'Grams|Kilograms|Total ounces');
+  g.set('1');
+  t('after swap 1 lb keeps 6dp', g.a(), '453.592370 g');
+  g.swap();
+  t('swap back restores grams label', g.inputLabel(), 'Grams');
+  t('swap back restores chips', g.chips().join(','), '100 g,250 g,500 g,1000 g,2000 g');
+
+  /* ================= REVERSE PAGE ================= */
+  const r = api(await load('/lbs-to-grams/'));
+  t('reverse page starts in pounds mode', r.inputLabel(), 'Pounds (lbs)');
+  t('reverse page prefilled 1', r.i.value, '1');
+  t('1 lb -> grams', r.a(), '453.5924 g');
+  t('1 lb -> kg', r.b(), '0.4536 kg');
+  t('1 lb -> oz', r.c(), '16.0000 oz');
+  r.set('2');
+  t('2 lb -> grams', r.a(), '907.1847 g');
+  r.set('0.5');
+  t('half lb -> grams', r.a(), '226.7962 g');
+  r.set('abc');
+  t('reverse bad input -> dash', r.a(), '—');
+  r.swap();
+  t('reverse page can swap to grams', r.inputLabel(), 'Grams');
+  r.set('1000');
+  t('reverse page after swap 1000 g', r.a(), '2.2046 lb');
+
+  /* ---- render ---- */
+  const failed = results.filter(x => !x.pass);
+  let html = '<b>CALCULATOR TEST — ' + results.length + ' assertions</b><br>';
+  html += 'passed: ' + (results.length - failed.length) + ' &nbsp; failed: ' + failed.length + '<br><br>';
+  if (failed.length) {
+    html += '<b>FAILURES:</b><br>';
+    failed.forEach(x => { html += '  ' + x.name + '<br>    got "' + x.actual + '" expected "' + x.expected + '"<br>'; });
+  } else {
+    html += 'All assertions passed.<br>';
+  }
+  document.getElementById('out').innerHTML = html;
+  document.title = 'DONE';
+})().catch(e => {
+  document.getElementById('out').innerHTML = 'EXCEPTION: ' + e.message + '<br>' + e.stack;
+  document.title = 'DONE';
+});
+</script>
+</body></html>

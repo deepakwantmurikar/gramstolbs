@@ -1,0 +1,67 @@
+# gramstolbs.com — Apache configuration for Hostinger
+#
+# Static site, so this file only does four things: send visitors to the custom
+# 404 page, force HTTPS and a single canonical hostname, compress text files,
+# and set cache lifetimes. Nothing here changes how any page is generated.
+
+# ----------------------------------------------------------------- 404 ----
+ErrorDocument 404 /404.html
+
+# ------------------------------------------------------- canonical URL ----
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Force the non-www hostname, so gramstolbs.com and www.gramstolbs.com do not
+  # both get indexed as separate sites. If you would rather use www, swap this
+  # block for the reverse rule instead of keeping both.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# ------------------------------------------------------- compression -----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript text/javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ------------------------------------------------------------ caching ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML is re-checked often so content edits appear quickly
+  ExpiresByType text/html "access plus 1 hour"
+
+  # Fingerprint-free assets: a month is a safe compromise. If you edit
+  # style.css and want the change live immediately, append a query string
+  # (style.css?v=2) in the <link> tags.
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # These must stay fresh so crawler directives take effect quickly
+  ExpiresByType text/plain "access plus 1 day"
+  ExpiresByType application/xml "access plus 1 day"
+</IfModule>
+
+# ------------------------------------------------------------ security ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block access to the build tooling and notes, which are not part of the site
+<FilesMatch "^(CLAUDE\.md|.*\.js\.map)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/(tools|Docs)/

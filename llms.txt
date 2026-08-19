@@ -1,0 +1,30 @@
+# gramstolbs.com
+
+> A grams to pounds converter. Results are given in decimal pounds, in pounds with
+> ounces, and in total ounces. One international avoirdupois pound is exactly
+> 453.59237 grams (International Yard and Pound Agreement, 1959).
+
+## Converters
+- [Grams to Lbs](https://gramstolbs.com/): convert grams to pounds, pounds and ounces, and total ounces.
+- [Lbs to Grams](https://gramstolbs.com/lbs-to-grams/): convert pounds to grams and kilograms.
+
+## Guides
+- [Baby birth weight](https://gramstolbs.com/guides/baby-weight-grams-to-pounds/): converting a birth weight recorded in grams to pounds and ounces, with a 1000-5000 g table.
+- [Gold and troy ounces](https://gramstolbs.com/guides/gold-grams-to-pounds-troy/): why precious metals use troy ounces of 31.1034768 g and what the 9.71 percent error costs.
+- [Shipping weight](https://gramstolbs.com/guides/shipping-weight-grams-to-pounds/): converting parcel weight to pounds and where carrier billing brackets fall.
+- [Food labels](https://gramstolbs.com/guides/food-label-grams-to-pounds/): converting package and nutrition label weights between grams and pounds.
+
+## Reference
+- [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
+- [Editorial Policy](https://gramstolbs.com/editorial-policy/): how content is written, verified and corrected.
+- [About](https://gramstolbs.com/about/): who runs the site and why.
+- [Contact](https://gramstolbs.com/contact/): how to report a conversion error.
+- [Privacy Policy](https://gramstolbs.com/privacy-policy/): data, cookies and advertising.
+- [Terms](https://gramstolbs.com/terms/): terms of use and the accuracy disclaimer.
+
+## Key facts
+- 1 pound = 453.59237 grams exactly.
+- 1 avoirdupois ounce = 28.349523125 grams exactly; 16 ounces make one pound.
+- 1 troy ounce = 31.1034768 grams; 12 troy ounces make a troy pound of 373.2417216 grams.
+- 500 grams = 1.1023 pounds = 1 lb 1.64 oz.
+- 1000 grams = 2.2046 pounds = 2 lb 3.27 oz.

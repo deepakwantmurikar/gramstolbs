@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lbs to Grams Converter — Convert Pounds to Grams</title>
+<meta name="description" content="Convert lbs to grams instantly. 1 pound = 453.59237 grams exactly. Enter pounds and get grams, kilograms and ounces at once.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../favicon.svg">
+<meta name="theme-color" content="#A87C32">
+
+<link rel="canonical" href="https://gramstolbs.com/lbs-to-grams/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gramstolbs.com/lbs-to-grams/">
+<meta property="og:site_name" content="gramstolbs.com">
+<meta property="og:title" content="Lbs to Grams Converter — Convert Pounds to Grams">
+<meta property="og:description" content="Convert lbs to grams instantly. 1 pound = 453.59237 grams exactly. Enter pounds and get grams, kilograms and ounces at once.">
+<meta property="og:image" content="https://gramstolbs.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Grams to Lbs converter — 500 g equals 1.1023 lb, or 1 lb 1.64 oz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lbs to Grams Converter — Convert Pounds to Grams">
+<meta name="twitter:description" content="Convert lbs to grams instantly. 1 pound = 453.59237 grams exactly. Enter pounds and get grams, kilograms and ounces at once.">
+<meta name="twitter:image" content="https://gramstolbs.com/assets/img/og-image.png">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gramstolbs.com/#org",
+      "name": "gramstolbs.com",
+      "url": "https://gramstolbs.com/",
+      "email": "contact@gramstolbs.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gramstolbs.com/#author",
+      "name": "Deepak Wantmurikar",
+      "url": "https://gramstolbs.com/about/",
+      "jobTitle": "Web Developer and Blogger",
+      "description": "Web developer and blogger who builds and maintains measurement conversion tools, including gramstolbs.com and gramstocup.com.",
+      "email": "contact@gramstolbs.com",
+      "image": "https://gramstolbs.com/assets/img/deepak-wantmurikar.jpg",
+      "sameAs": [
+        "https://gramstocup.com"
+      ],
+      "knowsAbout": [
+        "Unit conversion",
+        "Weight and mass measurement",
+        "Avoirdupois and troy weight systems",
+        "Web development"
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Lbs to Grams Converter",
+      "url": "https://gramstolbs.com/lbs-to-grams/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gramstolbs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lbs to Grams",
+          "item": "https://gramstolbs.com/lbs-to-grams/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../">
+      <img class="logo-mark" src="../assets/img/logo.svg" alt="" width="32" height="32">
+      <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../">Grams to Lbs</a></li>
+        <li><a href="../lbs-to-grams/" aria-current="page">Lbs to Grams</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Exact &middot; 453.59237 g per lb</span>
+    <h1>Lbs to Grams Converter</h1>
+    <p>Convert pounds to grams instantly. Enter a weight in lbs and read grams,
+    kilograms and total ounces together, updating as you type.</p>
+  </section>
+
+  <section class="converter-section wrap">
+    <div class="converter-card" data-mode="lb-to-g">
+     <div class="converter-grid">
+      <div class="panel-input">
+
+      <div class="field">
+        <label class="micro" for="value-input" id="input-label">Pounds (lbs)</label>
+        <div class="input-shell">
+          <input type="number" id="value-input" inputmode="decimal" step="any" min="0"
+                 autocomplete="off" placeholder="0" value="1" autofocus>
+          <span class="unit-suffix" id="unit-suffix" aria-hidden="true">lb</span>
+        </div>
+      </div>
+
+      <div class="beam" aria-hidden="true">
+        <div class="beam-arm" id="beam-arm"><span class="beam-weight" id="beam-weight"></span></div>
+        <div class="beam-fulcrum"></div>
+        <div class="beam-base"></div>
+        <div class="beam-scale"></div>
+      </div>
+
+      <div class="quick">
+        <span class="micro" id="quick-label">Quick pick</span>
+        <div class="chip-row" id="chip-row" role="group" aria-labelledby="quick-label"></div>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="swap-btn" id="swap-btn">
+          <span class="glyph" aria-hidden="true">&#8646;</span>
+          <span class="swap-text">Swap to grams &rarr; lbs</span>
+        </button>
+        <fieldset class="precision">
+          <legend class="micro">Decimals</legend>
+          <div class="segmented">
+            <label><input type="radio" name="precision" value="2"><span>2</span></label>
+            <label><input type="radio" name="precision" value="4" checked><span>4</span></label>
+            <label><input type="radio" name="precision" value="6"><span>6</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      </div>
+
+      <div class="panel-results">
+        <div class="results" aria-live="polite">
+          <div class="result-row">
+            <span class="result-label" id="label-a">Grams</span>
+            <div class="result-line">
+              <span class="result-value" id="value-a" data-empty="true">&mdash;</span>
+              <button type="button" class="copy-btn" data-target="value-a" aria-label="Copy grams">Copy</button>
+            </div>
+          </div>
+          <div class="result-row">
+            <span class="result-label" id="label-b">Kilograms</span>
+            <div class="result-line">
+              <span class="result-value" id="value-b" data-empty="true">&mdash;</span>
+              <button type="button" class="copy-btn" data-target="value-b" aria-label="Copy kilograms">Copy</button>
+            </div>
+          </div>
+          <div class="result-row">
+            <span class="result-label" id="label-c">Total ounces</span>
+            <div class="result-line">
+              <span class="result-value" id="value-c" data-empty="true">&mdash;</span>
+              <button type="button" class="copy-btn" data-target="value-c" aria-label="Copy total ounces">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </div>
+      <p class="note">1 pound = 453.59237 grams exactly, by the 1959 International Yard and Pound Agreement.</p>
+    </div></section>
+
+  <div class="article">
+    <aside class="toc">
+      <h2>On this page</h2>
+      <nav aria-label="Article contents">
+        <ul>
+          <li><a href="#formula">The formula</a></li>
+          <li><a href="#recipes">American recipes</a></li>
+          <li><a href="#fractions">Half and quarter pounds</a></li>
+          <li><a href="#table">Conversion table</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  <section class="prose">
+
+    <div class="byline">
+      <span><span class="dot" aria-hidden="true"></span> By Deepak Wantmurikar</span>
+      <span>Last updated: 19 August 2026</span>
+    </div>
+
+    <p class="lead">To convert lbs to grams, multiply the number of pounds by 453.59237.
+    One pound equals 453.59237 grams exactly, so 1 lb is 453.59 g, 2 lb is 907.18 g and
+    half a pound is 226.80 g. The factor is a definition rather than a measurement, which
+    means it never changes.</p>
+
+    <h2 id="formula">How to convert lbs to grams</h2>
+
+    <p>Multiply pounds by 453.59237 to get grams. That single step covers every conversion
+    in this direction, and dividing by the same figure reverses it:</p>
+
+    <div class="worked">
+      grams&nbsp; = pounds &times; <strong>453.59237</strong><br>
+      pounds = grams &divide; <strong>453.59237</strong>
+    </div>
+
+    <p>The figure 453.59237 comes from the International Yard and Pound Agreement of 1959,
+    in which the standards bodies of the United States, the United Kingdom, Canada,
+    Australia, New Zealand and South Africa defined one international avoirdupois pound as
+    exactly that many grams. NIST Special Publication 811 lists the same value as an exact
+    conversion factor. Because it is exact, a pound weighs the same in every country that
+    signed, and any variation you see between calculators is a rounding choice rather than
+    a real difference.</p>
+
+    <h2 id="recipes">Reading an American recipe with a metric scale</h2>
+
+    <p>Multiply the pounds in the recipe by 453.59237 and weigh that many grams. American
+    recipes and packaging quote pounds while most kitchen scales sold outside the United
+    States read in grams, so this is the most common reason for converting in this
+    direction. A recipe calling for 2 lb of flour needs 907.18 grams, and one calling for
+    1.5 lb of beef needs 680.39 grams.</p>
+
+    <p>Recipe writers usually round, which matters more for baking than for cooking. A
+    package labelled 1 lb holds 453.59 grams, while a metric package labelled 500 g holds
+    about 46 grams more. Substituting one for the other changes a bread dough noticeably
+    but will not harm a stew.</p>
+
+    <h2 id="fractions">Half pounds, quarter pounds and ounces</h2>
+
+    <p>Half a pound is 226.80 grams and a quarter pound is 113.40 grams. Both come from
+    dividing the exact figure of 453.59237 grams per pound. Butchers, delicatessens and
+    burger menus use these fractions constantly, which is where the quarter-pound patty
+    takes its name.</p>
+
+    <p>Pounds also divide into ounces rather than into tenths. One pound contains 16
+    avoirdupois ounces and one ounce is 28.349523125 grams exactly. A weight written as
+    1 lb 8 oz is therefore 1.5 lb, which is 680.39 grams.</p>
+
+    <h2 id="table">Lbs to grams conversion table</h2>
+
+    <p>This table converts common pound values to grams and kilograms. Every row uses the
+    exact factor of 453.59237 grams per pound and is rounded for display.</p>
+
+    <div class="table-scroll breakout">
+      <table>
+        <caption>Pounds to grams and kilograms, rounded for display</caption>
+        <thead>
+          <tr><th scope="col">Pounds (lb)</th><th scope="col">Grams (g)</th><th scope="col">Kilograms (kg)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.25 lb</td><td>113.40 g</td><td>0.113 kg</td></tr>
+          <tr><td>0.5 lb</td><td>226.80 g</td><td>0.227 kg</td></tr>
+          <tr><td>1 lb</td><td>453.59 g</td><td>0.454 kg</td></tr>
+          <tr><td>1.5 lb</td><td>680.39 g</td><td>0.680 kg</td></tr>
+          <tr><td>2 lb</td><td>907.18 g</td><td>0.907 kg</td></tr>
+          <tr><td>3 lb</td><td>1360.78 g</td><td>1.361 kg</td></tr>
+          <tr><td>4 lb</td><td>1814.37 g</td><td>1.814 kg</td></tr>
+          <tr><td>5 lb</td><td>2267.96 g</td><td>2.268 kg</td></tr>
+          <tr><td>10 lb</td><td>4535.92 g</td><td>4.536 kg</td></tr>
+          <tr><td>20 lb</td><td>9071.85 g</td><td>9.072 kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Converting the other way is covered on the <a href="../">grams to lbs
+    converter</a>, which also breaks the answer into pounds and ounces.</p>
+
+  </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <span class="logo">
+          <img class="logo-mark" src="../assets/img/logo.svg" alt="" width="32" height="32">
+          <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
+        </span>
+        <p class="footer-desc">A focused grams to pounds converter. Every result is given in
+        decimal pounds and in pounds with ounces, calculated in your browser using the exact
+        international definition of the pound.</p>
+        <span class="footer-fact">1 lb = 453.59237 g exactly</span>
+      </div>
+
+      <div class="footer-col">
+        <h3>Converters</h3>
+        <ul>
+          <li><a href="../">Grams to Lbs</a></li>
+          <li><a href="../lbs-to-grams/">Lbs to Grams</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/baby-weight-grams-to-pounds/">Baby Birth Weight</a></li>
+          <li><a href="../guides/gold-grams-to-pounds-troy/">Gold &amp; Troy Ounces</a></li>
+          <li><a href="../guides/shipping-weight-grams-to-pounds/">Shipping Weight</a></li>
+          <li><a href="../guides/food-label-grams-to-pounds/">Food Labels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Trust</h3>
+        <ul>
+          <li><a href="../methodology/">Methodology</a></li>
+          <li><a href="../editorial-policy/">Editorial Policy</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          <li><a href="../terms/">Terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> gramstolbs.com &middot; Written by Deepak Wantmurikar</p>
+      <p>Every conversion runs in your browser. Nothing you type is sent to a server.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../assets/js/convert.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

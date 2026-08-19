@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Favicon: same balance scale, thickened and simplified so it survives
+       being rendered at 16x16 in a browser tab. Solid brass ground gives it
+       a recognisable silhouette against both light and dark tab bars. -->
+  <rect width="32" height="32" rx="7" fill="#A87C32"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 9v15"/>
+    <path d="M11.5 24.5h9"/>
+    <path d="M6 11.5h20"/>
+    <path d="M8.5 11.5 6 17M8.5 11.5 11 17"/>
+    <path d="M23.5 11.5 21 17M23.5 11.5 26 17"/>
+    <path d="M5 17h7M20 17h7"/>
+  </g>
+  <circle cx="16" cy="11.5" r="2.2" fill="#FFFFFF"/>
+</svg>
