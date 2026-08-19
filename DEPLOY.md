@@ -1,5 +1,14 @@
 # Deployment checklist — gramstolbs.com
 
+## LIVE since 19 August 2026
+
+Deployed to Hostinger from GitHub (Advanced → GIT, branch main, root public_html).
+Verified live: all 22 URLs return 200, custom 404 active, HTTPS and www redirects
+working, internal notes return 403, SSL valid, 12 URLs in sitemap.
+
+To publish a change: commit, push, then click Redeploy in hPanel (or enable the
+auto-deployment webhook so a push deploys by itself).
+
 Everything below is in the order it should be done. Items marked **[you]** are things
 only you can do; the rest is already finished in the repository.
 
