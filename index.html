@@ -52,20 +52,37 @@
       "@id": "https://gramstolbs.com/#website",
       "url": "https://gramstolbs.com/",
       "name": "gramstolbs.com",
-      "publisher": { "@id": "https://gramstolbs.com/#org" }
+      "publisher": {
+        "@id": "https://gramstolbs.com/#org"
+      }
     },
     {
       "@type": "Organization",
       "@id": "https://gramstolbs.com/#org",
       "name": "gramstolbs.com",
       "url": "https://gramstolbs.com/",
-      "email": "contact@gramstolbs.com"
+      "email": "contact@gramstolbs.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gramstolbs.com/assets/img/logo.svg",
+        "width": 32,
+        "height": 32
+      },
+      "founder": {
+        "@id": "https://gramstolbs.com/#author"
+      }
     },
     {
       "@type": "Person",
       "@id": "https://gramstolbs.com/#author",
       "name": "Deepak Wantmurikar",
-      "url": "https://gramstolbs.com/about/"
+      "url": "https://gramstolbs.com/about/",
+      "jobTitle": "Web Developer and Blogger",
+      "image": "https://gramstolbs.com/assets/img/deepak-wantmurikar.jpg",
+      "sameAs": [
+        "https://gramstocup.com"
+      ],
+      "email": "contact@gramstolbs.com"
     },
     {
       "@type": "WebApplication",
@@ -75,7 +92,15 @@
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://gramstolbs.com/assets/img/og-image.png",
+      "author": {
+        "@id": "https://gramstolbs.com/#author"
+      }
     },
     {
       "@type": "FAQPage",
@@ -84,52 +109,82 @@
         {
           "@type": "Question",
           "name": "How many pounds is 500 grams?",
-          "acceptedAnswer": { "@type": "Answer", "text": "500 grams is 1.1023 pounds, or 1 pound 1.64 ounces. The calculation divides 500 by 453.59237, the exact number of grams in one pound. A half kilogram is therefore a little over one pound, not half a pound." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "500 grams is 1.1023 pounds, or 1 pound 1.64 ounces. The calculation divides 500 by 453.59237, the exact number of grams in one pound. A half kilogram is therefore a little over one pound, not half a pound."
+          }
         },
         {
           "@type": "Question",
           "name": "Is 500 grams half a pound?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. 500 grams is 1.1023 pounds, which is slightly more than one full pound. Half a pound is 226.796 grams. The confusion comes from 500 grams being half a kilogram, but a kilogram is 2.2046 pounds." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. 500 grams is 1.1023 pounds, which is slightly more than one full pound. Half a pound is 226.796 grams. The confusion comes from 500 grams being half a kilogram, but a kilogram is 2.2046 pounds."
+          }
         },
         {
           "@type": "Question",
           "name": "How many grams are in a pound?",
-          "acceptedAnswer": { "@type": "Answer", "text": "There are exactly 453.59237 grams in one pound. This is a definition rather than a measurement, fixed by the International Yard and Pound Agreement of 1959. For everyday use 453.6 grams is close enough." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are exactly 453.59237 grams in one pound. This is a definition rather than a measurement, fixed by the International Yard and Pound Agreement of 1959. For everyday use 453.6 grams is close enough."
+          }
         },
         {
           "@type": "Question",
           "name": "How do I convert grams to pounds and ounces?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Divide the grams by 453.59237 to get decimal pounds, then multiply the part after the decimal point by 16 to get ounces. For 1,000 grams this gives 2.2046 pounds, and 0.2046 multiplied by 16 gives 3.27 ounces, so 1,000 grams is 2 lb 3.27 oz." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the grams by 453.59237 to get decimal pounds, then multiply the part after the decimal point by 16 to get ounces. For 1,000 grams this gives 2.2046 pounds, and 0.2046 multiplied by 16 gives 3.27 ounces, so 1,000 grams is 2 lb 3.27 oz."
+          }
         },
         {
           "@type": "Question",
           "name": "Why does my scale show a different number?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Almost always rounding. Consumer scales usually resolve to the nearest 1 gram or 0.1 ounce and round before displaying. The conversion factor itself, 453.59237 grams per pound, is exact and never varies." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost always rounding. Consumer scales usually resolve to the nearest 1 gram or 0.1 ounce and round before displaying. The conversion factor itself, 453.59237 grams per pound, is exact and never varies."
+          }
         },
         {
           "@type": "Question",
           "name": "Is a pound the same in the UK and the US?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both countries use the international avoirdupois pound of exactly 453.59237 grams, agreed in 1959. British English spells the metric unit grammes as well as grams, but the spelling makes no difference to the conversion." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Both countries use the international avoirdupois pound of exactly 453.59237 grams, agreed in 1959. British English spells the metric unit grammes as well as grams, but the spelling makes no difference to the conversion."
+          }
         },
         {
           "@type": "Question",
           "name": "What is a metric pound?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A metric pound is exactly 500 grams, and it is an informal unit rather than an official one. It is used conversationally in parts of Europe, such as the German Pfund. A metric pound of 500 grams equals 1.1023 international pounds." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A metric pound is exactly 500 grams, and it is an informal unit rather than an official one. It is used conversationally in parts of Europe, such as the German Pfund. A metric pound of 500 grams equals 1.1023 international pounds."
+          }
         },
         {
           "@type": "Question",
           "name": "How do I convert my baby's birth weight from grams?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Divide the grams by 453.59237, then multiply the decimal remainder by 16 to get ounces. A baby recorded at 3,500 grams is 7 lb 11.46 oz, and one recorded at 3,000 grams is 6 lb 9.82 oz." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the grams by 453.59237, then multiply the decimal remainder by 16 to get ounces. A baby recorded at 3,500 grams is 7 lb 11.46 oz, and one recorded at 3,000 grams is 6 lb 9.82 oz."
+          }
         },
         {
           "@type": "Question",
           "name": "Does the conversion change for gold?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The grams-to-pounds conversion does not change, but gold is normally quoted in troy ounces. One troy ounce is 31.1034768 grams against 28.349523125 grams for an ordinary ounce, so 100 grams of gold is 3.215 troy ounces but 3.527 ordinary ounces." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The grams-to-pounds conversion does not change, but gold is normally quoted in troy ounces. One troy ounce is 31.1034768 grams against 28.349523125 grams for an ordinary ounce, so 100 grams of gold is 3.215 troy ounces but 3.527 ordinary ounces."
+          }
         },
         {
           "@type": "Question",
           "name": "How many grams are in a half pound?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A half pound is 226.796 grams, calculated as 453.59237 divided by two. A quarter pound is 113.398 grams, which is where the quarter-pound burger patty gets its name." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A half pound is 226.796 grams, calculated as 453.59237 divided by two. A quarter pound is 113.398 grams, which is where the quarter-pound burger patty gets its name."
+          }
         }
       ]
     }

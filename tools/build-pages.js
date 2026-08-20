@@ -178,7 +178,15 @@ const ORG = {
   '@id': SITE + '/#org',
   name: 'gramstolbs.com',
   url: SITE + '/',
-  email: EMAIL
+  email: EMAIL,
+  /* Google uses the logo for knowledge panels and publisher attribution */
+  logo: {
+    '@type': 'ImageObject',
+    url: SITE + '/assets/img/logo.svg',
+    width: 32,
+    height: 32
+  },
+  founder: { '@id': SITE + '/#author' }
 };
 const PERSON = {
   '@type': 'Person',
@@ -1139,7 +1147,16 @@ function guideSchema(slug, title, desc) {
         dateModified: '2026-08-19',
         author: { '@id': SITE + '/#author' },
         publisher: { '@id': SITE + '/#org' },
-        mainEntityOfPage: SITE + '/guides/' + slug + '/'
+        mainEntityOfPage: SITE + '/guides/' + slug + '/',
+        /* Article rich results require an image; this is the site's social card */
+        image: {
+          '@type': 'ImageObject',
+          url: SITE + '/assets/img/og-image.png',
+          width: 1200,
+          height: 630
+        },
+        inLanguage: 'en',
+        isAccessibleForFree: true
       },
       {
         '@type': 'BreadcrumbList',
