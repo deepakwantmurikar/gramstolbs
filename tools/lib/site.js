@@ -19,6 +19,32 @@ const AUTHOR = 'Deepak Wantmurikar';
 const EMAIL = 'contact@gramstolbs.com';
 const GA_ID = 'G-L125VQ750L';
 const ARTICLES_REGISTRY = path.join(__dirname, '..', '..', 'content', 'articles.json');
+const PROJECT_ROOT = path.join(__dirname, '..', '..');
+
+/* Cache-busting for style.css / convert.js / app.js.
+
+   .htaccess sets a 30-day CDN cache on these with no revalidation, which is
+   good for performance but means a CSS edit alone doesn't reach visitors (or
+   even a fresh curl) until 30 days pass, unless the URL itself changes. This
+   hashes each file's actual content and appends it as ?v=<hash> — the URL
+   only changes when the content does, so an edit busts the cache immediately
+   and an unrelated deploy doesn't throw away a cache that's still valid.
+   This bit us for real on 2026-09-02: the blog page's CSS additions sat
+   correctly on the server but stayed invisible behind a stale 13-day-old
+   cached copy until this was added. */
+const crypto = require('crypto');
+const _assetVersionCache = {};
+function assetVersion(relPath) {
+  if (_assetVersionCache[relPath]) return _assetVersionCache[relPath];
+  try {
+    const content = fs.readFileSync(path.join(PROJECT_ROOT, relPath));
+    const hash = crypto.createHash('md5').update(content).digest('hex').slice(0, 8);
+    _assetVersionCache[relPath] = hash;
+    return hash;
+  } catch (e) {
+    return Date.now().toString(36); // file missing at build time — still bust the cache
+  }
+}
 
 /* The 12 hand-built pages that exist outside the blog registry. Defined once
    here so build-pages.js and publish-article.js write an identical sitemap
@@ -80,7 +106,7 @@ function head(p, page) {
 <meta name="twitter:description" content="${page.desc}">
 <meta name="twitter:image" content="${SITE}/assets/img/og-image.png">
 
-<link rel="stylesheet" href="${p}assets/css/style.css">
+<link rel="stylesheet" href="${p}assets/css/style.css?v=${assetVersion('assets/css/style.css')}">
 
 <script type="application/ld+json">
 ${JSON.stringify(page.schema, null, 2)}
@@ -176,8 +202,8 @@ function foot(p) {
   </div>
 </footer>
 
-<script src="${p}assets/js/convert.js"></script>
-<script src="${p}assets/js/app.js"></script>
+<script src="${p}assets/js/convert.js?v=${assetVersion('assets/js/convert.js')}"></script>
+<script src="${p}assets/js/app.js?v=${assetVersion('assets/js/app.js')}"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
