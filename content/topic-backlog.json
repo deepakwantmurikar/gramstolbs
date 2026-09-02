@@ -3,15 +3,24 @@
     "id": "drone-weight-grams-to-pounds",
     "angle": "Drone and RC aircraft weight limits (FAA 250g registration threshold) in grams and pounds",
     "why": "Genuinely distinct: ties to a real US regulation (FAA requires registration above 250g), not just a conversion table. Strong tier-1 relevance (US/UK/Canada/Australia all regulate drones by weight).",
-    "seedKeywords": ["drone weight grams to pounds", "250 gram drone rule", "FAA drone weight limit lbs"],
+    "seedKeywords": [
+      "drone weight grams to pounds",
+      "250 gram drone rule",
+      "FAA drone weight limit lbs"
+    ],
     "cautions": "State the 250g figure and cite the FAA source; do not give legal advice beyond the published threshold. Note UK/EU/Australia have their own thresholds — do not imply the US figure applies everywhere.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-02"
   },
   {
     "id": "coffee-bag-grams-to-pounds",
     "angle": "Specialty coffee bag sizes (250g, 340g/12oz, 1kg) converted to pounds for buying and roasting",
     "why": "Distinct from food-label guide (that's about nutrition-panel serving sizes; this is about whole-bag purchase sizing and price-per-pound comparison).",
-    "seedKeywords": ["coffee bag grams to pounds", "12 oz coffee bag in grams", "how many pounds is 1kg of coffee"],
+    "seedKeywords": [
+      "coffee bag grams to pounds",
+      "12 oz coffee bag in grams",
+      "how many pounds is 1kg of coffee"
+    ],
     "cautions": "None.",
     "status": "open"
   },
@@ -19,7 +28,11 @@
     "id": "3d-printing-filament-grams-to-pounds",
     "angle": "3D printer filament spool weights (net filament weight vs spool+filament gross weight) in grams and pounds",
     "why": "Real, specific pain point: filament is sold by net weight (e.g. 1kg/1000g) but ships with a spool that adds 150-250g, which confuses buyers estimating shipping weight in pounds. Not covered anywhere on the site.",
-    "seedKeywords": ["1kg filament in pounds", "filament spool weight grams", "3d printer filament weight lbs"],
+    "seedKeywords": [
+      "1kg filament in pounds",
+      "filament spool weight grams",
+      "3d printer filament weight lbs"
+    ],
     "cautions": "None.",
     "status": "open"
   },
@@ -27,7 +40,11 @@
     "id": "diamond-carats-grams-to-pounds",
     "angle": "Diamond and gemstone carats converted through grams to pounds, and why carats aren't grams",
     "why": "Distinct unit system (1 carat = 200 mg exactly) genuinely different from the gold/troy guide (troy ounces). Real search intent from people trying to picture carat weight in a familiar unit.",
-    "seedKeywords": ["carat to grams to pounds", "how many carats in a pound", "diamond weight in pounds"],
+    "seedKeywords": [
+      "carat to grams to pounds",
+      "how many carats in a pound",
+      "diamond weight in pounds"
+    ],
     "cautions": "State the exact carat-to-gram definition (1 ct = 0.2 g exactly, a metric standard since 1907) and cite it. Do not give jewelry valuation or investment advice.",
     "status": "open"
   },
@@ -35,7 +52,11 @@
     "id": "deli-counter-grams-to-pounds",
     "angle": "Deli and butcher counter ordering: converting a gram-based recipe amount to pounds for US counter service",
     "why": "Distinct from food-labels guide (packaged/labelled goods with printed serving sizes) — this is about ordering an unpackaged, unknown-weight amount by asking for it in pounds at a US counter when a recipe or scale reads grams.",
-    "seedKeywords": ["how many pounds to ask for at deli", "grams to pounds meat recipe", "convert recipe grams to pounds deli"],
+    "seedKeywords": [
+      "how many pounds to ask for at deli",
+      "grams to pounds meat recipe",
+      "convert recipe grams to pounds deli"
+    ],
     "cautions": "None.",
     "status": "open"
   },
@@ -43,7 +64,11 @@
     "id": "pet-food-grams-to-pounds",
     "angle": "Pet food and treat portions: converting grams (common on packaging and vet guidance) to pounds for US bag sizes",
     "why": "Distinct audience and search intent from food-labels (human nutrition). Real recurring query: many pet food portion charts are printed in grams while US bags are sold and measured in pounds.",
-    "seedKeywords": ["dog food grams to pounds", "pet food portion grams to lbs", "cat food grams to pounds"],
+    "seedKeywords": [
+      "dog food grams to pounds",
+      "pet food portion grams to lbs",
+      "cat food grams to pounds"
+    ],
     "cautions": "This is a unit conversion page, not feeding or veterinary advice — do not recommend portion sizes, only convert whatever figure the reader already has (e.g., from packaging or a vet).",
     "status": "open"
   },
@@ -51,7 +76,11 @@
     "id": "international-shipping-brackets-by-country",
     "angle": "Postal weight brackets compared across the US, UK, Canada and Australia in grams and pounds",
     "why": "Deeper and structurally different from the existing shipping-weight guide (which covers US carrier rounding-up behavior generally): this one is a country-by-country comparison table, useful for anyone shipping internationally.",
-    "seedKeywords": ["international shipping weight grams pounds", "royal mail weight bands lbs", "usps weight bracket grams"],
+    "seedKeywords": [
+      "international shipping weight grams pounds",
+      "royal mail weight bands lbs",
+      "usps weight bracket grams"
+    ],
     "cautions": "Carrier weight brackets change; state that rates should be confirmed on the carrier's own site and that this page gives the unit conversion, not current pricing. Do not state specific prices, only weight-bracket conversions.",
     "status": "open"
   },
@@ -59,7 +88,11 @@
     "id": "yarn-craft-grams-to-pounds",
     "angle": "Yarn, fabric and craft material weights (skein grams to pounds) for buying in bulk",
     "why": "Distinct hobbyist audience with real recurring need: craft patterns and skein labels are in grams, US bulk/wholesale craft supply is often priced or shipped by the pound.",
-    "seedKeywords": ["yarn grams to pounds", "how many pounds of yarn", "skein weight grams to lbs"],
+    "seedKeywords": [
+      "yarn grams to pounds",
+      "how many pounds of yarn",
+      "skein weight grams to lbs"
+    ],
     "cautions": "None.",
     "status": "open"
   },
@@ -67,7 +100,11 @@
     "id": "protein-powder-grams-to-pounds",
     "angle": "Protein powder and supplement tub sizes (grams to pounds) for comparing container sizes when buying",
     "why": "Fitness audience, real distinct search intent (comparing a 900g tub to a 2lb tub when price-shopping). Not covered by food-labels guide.",
-    "seedKeywords": ["protein powder grams to pounds", "2lb tub how many grams", "supplement container weight lbs"],
+    "seedKeywords": [
+      "protein powder grams to pounds",
+      "2lb tub how many grams",
+      "supplement container weight lbs"
+    ],
     "cautions": "Unit conversion only — no dosing, serving-size, or supplement-safety advice.",
     "status": "open"
   },
@@ -75,7 +112,11 @@
     "id": "gemstone-silver-platinum-grams-to-pounds",
     "angle": "Silver and platinum weight conversion (troy ounces to pounds), extending the gold guide to other precious metals",
     "why": "Same troy-vs-avoirdupois mechanism as the gold guide but a distinct audience search intent (silver/platinum buyers specifically), with its own worked example and current-relevance angle (silver is bought in bulk more often than gold, changing the practical weight ranges involved).",
-    "seedKeywords": ["silver grams to pounds troy", "platinum weight conversion pounds", "silver bullion weight lbs"],
+    "seedKeywords": [
+      "silver grams to pounds troy",
+      "platinum weight conversion pounds",
+      "silver bullion weight lbs"
+    ],
     "cautions": "No price or investment advice — unit conversion and the troy/avoirdupois distinction only, same posture as the existing gold guide.",
     "status": "open"
   },
@@ -83,7 +124,11 @@
     "id": "baby-formula-portions-grams-to-pounds",
     "angle": "Infant formula scoop and tub sizes (grams to pounds) for comparing container sizes when buying",
     "why": "Distinct from the birth-weight guide (that converts a baby's weight; this converts formula container/scoop weight, a different real search: comparing a 900g tin to a 2lb tin).",
-    "seedKeywords": ["baby formula grams to pounds", "formula tub weight lbs", "how many pounds of formula"],
+    "seedKeywords": [
+      "baby formula grams to pounds",
+      "formula tub weight lbs",
+      "how many pounds of formula"
+    ],
     "cautions": "YMYL-adjacent — strictly unit conversion of container/product weight only. Do NOT state feeding amounts, scoop-to-ounce ratios implying dosage, or any feeding guidance. If a draft cannot stay on the safe side of that line, skip this topic rather than publish it.",
     "status": "open"
   },
@@ -91,7 +136,11 @@
     "id": "vintage-coin-grams-to-pounds",
     "angle": "Bullion and vintage coin weight standards (grams to troy ounces to pounds) for collectors",
     "why": "Distinct from the gold guide's jewelry/scrap framing — this is about specific minted coin weight standards (e.g. American Eagle, Sovereign) collectors look up by name, a different search pattern.",
-    "seedKeywords": ["gold coin weight grams to pounds", "silver eagle weight in pounds", "bullion coin weight conversion"],
+    "seedKeywords": [
+      "gold coin weight grams to pounds",
+      "silver eagle weight in pounds",
+      "bullion coin weight conversion"
+    ],
     "cautions": "State only the physical weight standard of each coin as minted; no pricing, grading, or investment claims.",
     "status": "open"
   }
