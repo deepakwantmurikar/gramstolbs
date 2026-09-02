@@ -15,7 +15,7 @@
 - [Food labels](https://gramstolbs.com/guides/food-label-grams-to-pounds/): converting package and nutrition label weights between grams and pounds.
 
 ## Blog
-- [Blog](https://gramstolbs.com/blog/): New grams to lbs articles, published regularly.
+- [Drone Weight: 250 Grams to Pounds for FAA Registration](https://gramstolbs.com/blog/drone-weight-grams-to-pounds/): The FAA draws its drone registration line at 250 grams, which is 0.5512 pounds. Here is that figure and the UK, Canada and Australia thresholds, all converted and sourced.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
