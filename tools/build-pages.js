@@ -8,6 +8,14 @@
    It writes each page's index.html plus robots.txt, sitemap.xml, ads.txt and
    llms.txt. index.html at the root is hand-maintained and is NOT touched.
 
+   IMPORTANT — index.html has its OWN copy of the header nav and footer links,
+   not lib.head()/lib.foot(). A change to the nav or footer in tools/lib/site.js
+   (e.g. adding the Blog link, 2026-09-02) does NOT reach index.html and must
+   be applied there by hand too, or the homepage silently drifts out of sync
+   with every other page. This has already happened once — check index.html's
+   <nav class="site-nav"> and footer-col blocks whenever lib.head()/lib.foot()
+   changes.
+
    All internal links are relative so the site works both from a web server and
    by opening the files directly from disk.
 */
