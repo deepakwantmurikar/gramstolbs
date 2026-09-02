@@ -7,6 +7,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 process.chdir(ROOT);
 
+const lib = require('./lib/site');
+
 const PAGES = [
   'index.html',
   'lbs-to-grams/index.html',
@@ -19,8 +21,11 @@ const PAGES = [
   'guides/baby-weight-grams-to-pounds/index.html',
   'guides/gold-grams-to-pounds-troy/index.html',
   'guides/shipping-weight-grams-to-pounds/index.html',
-  'guides/food-label-grams-to-pounds/index.html'
-];
+  'guides/food-label-grams-to-pounds/index.html',
+  'blog/index.html'
+/* Blog articles are appended below from the registry, so a new article is
+   audited automatically the next time this runs — nothing to edit here. */
+].concat(lib.loadArticles().map((a) => 'blog/' + a.slug + '/index.html'));
 
 const norm = (s) => s.split(path.sep).join('/');
 const live = (p) => fs.readFileSync(p, 'utf8').replace(/<!--[\s\S]*?-->/g, '');

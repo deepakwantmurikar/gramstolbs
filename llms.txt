@@ -14,6 +14,9 @@
 - [Shipping weight](https://gramstolbs.com/guides/shipping-weight-grams-to-pounds/): converting parcel weight to pounds and where carrier billing brackets fall.
 - [Food labels](https://gramstolbs.com/guides/food-label-grams-to-pounds/): converting package and nutrition label weights between grams and pounds.
 
+## Blog
+- [Blog](https://gramstolbs.com/blog/): New grams to lbs articles, published regularly.
+
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
 - [Editorial Policy](https://gramstolbs.com/editorial-policy/): how content is written, verified and corrected.

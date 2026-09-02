@@ -14,220 +14,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const lib = require('./lib/site');
 
 const ROOT = path.join(__dirname, '..');
-const SITE = 'https://gramstolbs.com';
-const AUTHOR = 'Deepak Wantmurikar';
-const EMAIL = 'contact@gramstolbs.com';
-const GA_ID = 'G-L125VQ750L';   // Google Analytics 4 measurement ID
+const { SITE, AUTHOR, EMAIL, GA_ID, head, foot, ORG, PERSON, breadcrumbHTML } = lib;
 const UPDATED = '19 August 2026';
 
-/* ---------------------------------------------------------------- chrome -- */
-
-function head(p, page) {
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${page.title}</title>
-<meta name="description" content="${page.desc}">
-
-<!-- Google tag (gtag.js). Loaded async so it never blocks rendering.
-     Disclosed in the privacy policy under Cookies and Analytics. -->
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '${GA_ID}');
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-
-<link rel="icon" href="${p}favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="${p}favicon.svg">
-<meta name="theme-color" content="#A87C32">
-
-<link rel="canonical" href="${SITE}/${page.slug}/">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="${SITE}/${page.slug}/">
-<meta property="og:site_name" content="gramstolbs.com">
-<meta property="og:title" content="${page.title}">
-<meta property="og:description" content="${page.desc}">
-<meta property="og:image" content="${SITE}/assets/img/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Grams to Lbs converter — 500 g equals 1.1023 lb, or 1 lb 1.64 oz">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${page.title}">
-<meta name="twitter:description" content="${page.desc}">
-<meta name="twitter:image" content="${SITE}/assets/img/og-image.png">
-
-<link rel="stylesheet" href="${p}assets/css/style.css">
-
-<script type="application/ld+json">
-${JSON.stringify(page.schema, null, 2)}
-</script>
-</head>
-<body>
-
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="${p || './'}">
-      <img class="logo-mark" src="${p}assets/img/logo.svg" alt="" width="32" height="32">
-      <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
-    </a>
-    <nav class="site-nav" aria-label="Main">
-      <ul>
-        <li><a href="${p || './'}"${page.slug === '' ? ' aria-current="page"' : ''}>Grams to Lbs</a></li>
-        <li><a href="${p}lbs-to-grams/"${page.slug === 'lbs-to-grams' ? ' aria-current="page"' : ''}>Lbs to Grams</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main">`;
-}
-
-function foot(p) {
-  return `
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-
-    <div class="footer-grid">
-
-      <div class="footer-brand">
-        <span class="logo">
-          <img class="logo-mark" src="${p}assets/img/logo.svg" alt="" width="32" height="32">
-          <span class="logo-text">Grams<span class="arrow" aria-hidden="true">&rarr;</span>Lbs</span>
-        </span>
-        <p class="footer-desc">A focused grams to pounds converter. Every result is given in
-        decimal pounds and in pounds with ounces, calculated in your browser using the exact
-        international definition of the pound.</p>
-        <span class="footer-fact">1 lb = 453.59237 g exactly</span>
-      </div>
-
-      <div class="footer-col">
-        <h3>Converters</h3>
-        <ul>
-          <li><a href="${p || './'}">Grams to Lbs</a></li>
-          <li><a href="${p}lbs-to-grams/">Lbs to Grams</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Guides</h3>
-        <ul>
-          <li><a href="${p}guides/baby-weight-grams-to-pounds/">Baby Birth Weight</a></li>
-          <li><a href="${p}guides/gold-grams-to-pounds-troy/">Gold &amp; Troy Ounces</a></li>
-          <li><a href="${p}guides/shipping-weight-grams-to-pounds/">Shipping Weight</a></li>
-          <li><a href="${p}guides/food-label-grams-to-pounds/">Food Labels</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Trust</h3>
-        <ul>
-          <li><a href="${p}methodology/">Methodology</a></li>
-          <li><a href="${p}editorial-policy/">Editorial Policy</a></li>
-          <li><a href="${p}about/">About</a></li>
-          <li><a href="${p}contact/">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="${p}privacy-policy/">Privacy Policy</a></li>
-          <li><a href="${p}terms/">Terms</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; <span id="year">2026</span> gramstolbs.com &middot; Written by ${AUTHOR}</p>
-      <p>Every conversion runs in your browser. Nothing you type is sent to a server.</p>
-    </div>
-
-  </div>
-</footer>
-
-<script src="${p}assets/js/convert.js"></script>
-<script src="${p}assets/js/app.js"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
-`;
-}
-
-/* Shared schema fragments */
-const ORG = {
-  '@type': 'Organization',
-  '@id': SITE + '/#org',
-  name: 'gramstolbs.com',
-  url: SITE + '/',
-  email: EMAIL,
-  /* Google uses the logo for knowledge panels and publisher attribution */
-  logo: {
-    '@type': 'ImageObject',
-    url: SITE + '/assets/img/logo.svg',
-    width: 32,
-    height: 32
-  },
-  founder: { '@id': SITE + '/#author' }
-};
-const PERSON = {
-  '@type': 'Person',
-  '@id': SITE + '/#author',
-  name: AUTHOR,
-  url: SITE + '/about/',
-  jobTitle: 'Web Developer and Blogger',
-  description:
-    'Web developer and blogger who builds and maintains measurement conversion tools, ' +
-    'including gramstolbs.com and gramstocup.com.',
-  email: EMAIL,
-  image: SITE + '/assets/img/deepak-wantmurikar.jpg',
-  /* sameAs must only list profiles that genuinely belong to the author.
-     Add social or professional profiles here as they are confirmed. */
-  sameAs: ['https://gramstocup.com'],
-  knowsAbout: [
-    'Unit conversion',
-    'Weight and mass measurement',
-    'Avoirdupois and troy weight systems',
-    'Web development'
-  ]
-};
-
 function crumbs(p, name, slug) {
-  return {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-      { '@type': 'ListItem', position: 2, name: name, item: SITE + '/' + slug + '/' }
-    ]
-  };
-}
-
-function breadcrumbHTML(p, label) {
-  return `
-  <nav class="breadcrumb wrap" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="${p || './'}">Home</a></li>
-      <li aria-current="page">${label}</li>
-    </ol>
-  </nav>`;
+  return lib.crumbs(name, slug);
 }
 
 /* ----------------------------------------------------------------- pages -- */
@@ -1133,6 +927,13 @@ ${breadcrumbHTML(p, 'Terms')}
 });
 
 /* ---------------------------------------------------------------- guides -- */
+/* These 4 hand-built guides predate the /blog/ section and its index page,
+   so their breadcrumb deliberately leaves "Guides" as plain text rather than
+   a link — there is no /guides/index.html to point it at. Kept as local
+   functions rather than lib.articleCrumb (which does link the section) so
+   their output stays exactly what it was before this file used the shared
+   lib. New long-tail articles from the write-article pipeline go through
+   tools/publish-article.js instead, which links to the real /blog/ index. */
 
 function guideSchema(slug, title, desc) {
   return {
@@ -1148,7 +949,6 @@ function guideSchema(slug, title, desc) {
         author: { '@id': SITE + '/#author' },
         publisher: { '@id': SITE + '/#org' },
         mainEntityOfPage: SITE + '/guides/' + slug + '/',
-        /* Article rich results require an image; this is the site's social card */
         image: {
           '@type': 'ImageObject',
           url: SITE + '/assets/img/og-image.png',
@@ -1181,20 +981,10 @@ function guideCrumb(p, label) {
 }
 
 function guideByline(p) {
-  return `
-    <div class="byline">
-      <span><span class="dot" aria-hidden="true"></span> By ${AUTHOR}</span>
-      <span>Last updated: ${UPDATED}</span>
-    </div>`;
+  return lib.byline(AUTHOR, UPDATED);
 }
 
-function miniConverter(p, text) {
-  return `
-    <div class="worked" style="border-left-color:var(--brass);">
-      ${text}<br>
-      <a href="${p}">Open the grams to lbs converter &rarr;</a>
-    </div>`;
-}
+const miniConverter = lib.miniConverter;
 
 /* ---- guide 1: baby birth weight ---- */
 PAGES.push({
@@ -1785,19 +1575,10 @@ Sitemap: ${SITE}/sitemap.xml
 `, 'utf8');
 written.push('robots.txt');
 
-/* sitemap.xml */
-const urls = [''].concat(PAGES.map(x => x.slug));
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
-`<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
-    <loc>${SITE}/${u ? u + '/' : ''}</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>${u ? 'yearly' : 'monthly'}</changefreq>
-    <priority>${u === '' ? '1.0' : (u === 'lbs-to-grams' ? '0.9' : '0.5')}</priority>
-  </url>`).join('\n')}
-</urlset>
-`, 'utf8');
+/* sitemap.xml — core pages (lib.CORE_PAGES) plus any blog articles from the
+   registry. writeSitemap() is the one writer both this script and
+   tools/publish-article.js call, so the two can never disagree. */
+lib.writeSitemap(ROOT, lib.CORE_PAGES);
 written.push('sitemap.xml');
 
 /* ads.txt — empty until AdSense is approved, then one publisher line */
@@ -1810,40 +1591,15 @@ fs.writeFileSync(path.join(ROOT, 'ads.txt'),
 `, 'utf8');
 written.push('ads.txt');
 
-/* llms.txt */
-fs.writeFileSync(path.join(ROOT, 'llms.txt'),
-`# gramstolbs.com
-
-> A grams to pounds converter. Results are given in decimal pounds, in pounds with
-> ounces, and in total ounces. One international avoirdupois pound is exactly
-> 453.59237 grams (International Yard and Pound Agreement, 1959).
-
-## Converters
-- [Grams to Lbs](${SITE}/): convert grams to pounds, pounds and ounces, and total ounces.
-- [Lbs to Grams](${SITE}/lbs-to-grams/): convert pounds to grams and kilograms.
-
-## Guides
-- [Baby birth weight](${SITE}/guides/baby-weight-grams-to-pounds/): converting a birth weight recorded in grams to pounds and ounces, with a 1000-5000 g table.
-- [Gold and troy ounces](${SITE}/guides/gold-grams-to-pounds-troy/): why precious metals use troy ounces of 31.1034768 g and what the 9.71 percent error costs.
-- [Shipping weight](${SITE}/guides/shipping-weight-grams-to-pounds/): converting parcel weight to pounds and where carrier billing brackets fall.
-- [Food labels](${SITE}/guides/food-label-grams-to-pounds/): converting package and nutrition label weights between grams and pounds.
-
-## Reference
-- [Methodology](${SITE}/methodology/): exact constants, formulas, rounding rule and primary sources.
-- [Editorial Policy](${SITE}/editorial-policy/): how content is written, verified and corrected.
-- [About](${SITE}/about/): who runs the site and why.
-- [Contact](${SITE}/contact/): how to report a conversion error.
-- [Privacy Policy](${SITE}/privacy-policy/): data, cookies and advertising.
-- [Terms](${SITE}/terms/): terms of use and the accuracy disclaimer.
-
-## Key facts
-- 1 pound = 453.59237 grams exactly.
-- 1 avoirdupois ounce = 28.349523125 grams exactly; 16 ounces make one pound.
-- 1 troy ounce = 31.1034768 grams; 12 troy ounces make a troy pound of 373.2417216 grams.
-- 500 grams = 1.1023 pounds = 1 lb 1.64 oz.
-- 1000 grams = 2.2046 pounds = 2 lb 3.27 oz.
-`, 'utf8');
+/* llms.txt — one template in tools/lib/site.js, shared with publish-article.js,
+   so a new blog article never requires touching two files to appear in both. */
+lib.writeLlms(ROOT);
 written.push('llms.txt');
+
+/* /blog/index.html — the header nav links here on every page, so it must
+   always exist, even before the first article is published. */
+require('./build-blog-index').buildBlogIndex();
+written.push('blog/index.html');
 
 console.log('Generated:');
 written.forEach(w => console.log('  ' + w));
