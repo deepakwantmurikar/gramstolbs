@@ -16,6 +16,7 @@
 
 ## Blog
 - [Drone Weight: 250 Grams to Pounds for FAA Registration](https://gramstolbs.com/blog/drone-weight-grams-to-pounds/): The FAA draws its drone registration line at 250 grams, which is 0.5512 pounds. Here is that figure and the UK, Canada and Australia thresholds, all converted and sourced.
+- [Coffee Bag Sizes in Pounds: 250g, 340g and 1kg Converted](https://gramstolbs.com/blog/coffee-bag-grams-to-pounds/): Every common specialty coffee bag size converted from grams to pounds, from a 250 g bag to a 1 kg bulk bag, plus how to compare price per pound when bag sizes don’t match.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
