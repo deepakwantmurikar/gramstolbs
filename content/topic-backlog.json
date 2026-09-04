@@ -22,7 +22,8 @@
       "how many pounds is 1kg of coffee"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-04"
   },
   {
     "id": "3d-printing-filament-grams-to-pounds",
