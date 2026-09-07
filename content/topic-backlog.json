@@ -35,7 +35,8 @@
       "3d printer filament weight lbs"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-07"
   },
   {
     "id": "diamond-carats-grams-to-pounds",

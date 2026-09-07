@@ -4,6 +4,15 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-09-07
+- Published: Filament Spool Weight: 1kg in Pounds (Net vs Gross) (https://gramstolbs.com/blog/3d-printing-filament-grams-to-pounds/) — 1,433 words, 6 FAQs
+- Angle: 3D printer filament net weight (filament only, e.g. 1,000 g on a "1kg" spool) vs. gross weight (filament + empty spool, typically +150 to +260 g), covering the common spool sizes, how to weigh a spool to find remaining filament, and why boxed shipping weight runs noticeably higher than the label's net figure.
+- Freshness pass: no live regulatory/news hook for this topic (unlike the drone or coffee-shrinkflation angles) — didn't force one, per SOP; the piece leans on the genuine net-vs-gross confusion instead.
+- Duplicate check: clear against content/articles.json (drone-weight, coffee-bag) and the rest of topic-backlog.json — nothing else on the site touches 3D printing or filament.
+- Backlog remaining: 10
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission returned HTTP 403 for a third consecutive run (also 2026-09-02, 2026-09-04). New evidence this time: `curl "$HTTPS_PROXY/__agentproxy/status"` shows this environment's outbound proxy actively rejecting CONNECT to hosts outside its allowlist (`recentRelayFailures` full of `connect_rejected` / gateway 403 entries for unrelated hosts like google.com), and `api.indexnow.org` isn't in the proxy's `noProxy` allowlist. That's a much stronger signal than the last two runs had that this is an environment egress restriction, not a problem with the site's key file (`90190755243dcbe1b1dd3ccc9d085dab.txt`, committed and unchanged) or with IndexNow itself. Likely fix: add `api.indexnow.org` to the proxy allowlist for this environment, or run `node tools/indexnow-submit.js https://gramstolbs.com/blog/3d-printing-filament-grams-to-pounds/` from a machine with unrestricted outbound access.
+
 ## 2026-09-04
 - Published: Coffee Bag Sizes in Pounds: 250g, 340g and 1kg Converted (https://gramstolbs.com/blog/coffee-bag-grams-to-pounds/) — 1,458 words, 6 FAQs
 - Freshness angle used: coffee bag "shrinkflation" — roasters quietly shrinking bags from 340 g (12 oz) down to 300 g or 250 g at the same shelf price rather than raising prices outright, driven by rising green coffee costs. Worked into its own section plus a price-per-pound example and one FAQ.
