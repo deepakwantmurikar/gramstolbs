@@ -32,5 +32,22 @@
       "coffee bag sizes in pounds"
     ],
     "llmsDesc": "Every common specialty coffee bag size converted from grams to pounds, from a 250 g bag to a 1 kg bulk bag, plus how to compare price per pound when bag sizes don’t match."
+  },
+  {
+    "slug": "3d-printing-filament-grams-to-pounds",
+    "title": "Filament Spool Weight: 1kg in Pounds (Net vs Gross)",
+    "excerpt": "A 1kg filament spool is 1,000 grams of printable material, or 2.2046 pounds net. The empty spool adds 150 to 260 grams on top, so a full spool weighed on a scale reads higher than the label.",
+    "category": "Guide",
+    "cardAlt": "Chart showing a 1000 gram spool of 3D printer filament equals 2.2046 pounds net, with a typical 200 gram empty spool added for a gross weight near 2.6455 pounds",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "readMinutes": 5,
+    "keywords": [
+      "1kg filament in pounds",
+      "filament spool weight grams",
+      "3d printer filament weight lbs",
+      "filament net weight vs gross weight"
+    ],
+    "llmsDesc": "A 1kg filament spool is 1,000 grams of printable material, or 2.2046 pounds net. The empty spool adds 150 to 260 grams on top, so a full spool weighed on a scale reads higher than the label."
   }
 ]
