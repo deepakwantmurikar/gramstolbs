@@ -49,5 +49,22 @@
       "filament net weight vs gross weight"
     ],
     "llmsDesc": "A 1kg filament spool is 1,000 grams of printable material, or 2.2046 pounds net. The empty spool adds 150 to 260 grams on top, so a full spool weighed on a scale reads higher than the label."
+  },
+  {
+    "slug": "diamond-carats-grams-to-pounds",
+    "title": "Diamond Carats to Grams to Pounds (and Why They Differ)",
+    "excerpt": "A carat is defined as exactly 0.2 grams, which makes it 0.0004 pounds. Here is the full carat-to-gram-to-pound chart, plus what a pound of diamonds would actually mean.",
+    "category": "Guide",
+    "cardAlt": "Diamond carat weight conversion chart showing 1 carat equals 0.2 grams and 1 pound equals 2,267.96 carats",
+    "datePublished": "2026-09-09",
+    "dateModified": "2026-09-09",
+    "readMinutes": 6,
+    "keywords": [
+      "carat to grams to pounds",
+      "how many carats in a pound",
+      "diamond weight in pounds",
+      "carat weight conversion chart"
+    ],
+    "llmsDesc": "A carat is defined as exactly 0.2 grams, which makes it 0.0004 pounds. Here is the full carat-to-gram-to-pound chart, plus what a pound of diamonds would actually mean."
   }
 ]
