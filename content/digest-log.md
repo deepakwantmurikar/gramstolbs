@@ -4,6 +4,16 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-09-09
+- Published: Diamond Carats to Grams to Pounds (and Why They Differ) (https://gramstolbs.com/blog/diamond-carats-grams-to-pounds/) — 1,553 words, 6 FAQs
+- Angle: the exact carat-to-gram definition (1 ct = 0.2 g, metric standard since 1907), a full carats-to-grams-to-pounds chart, the reverse fact (1 lb = 2,267.96 ct), three sourced famous-diamond weights (Cullinan, Hope, Excelsior) converted to pounds, and the points-to-carats notation. Stayed strictly to unit conversion per this topic's cautions — no jewelry valuation or investment advice anywhere in the draft.
+- Freshness pass: no live news hook for carat weight specifically; didn't force one, per SOP.
+- Duplicate check: clear against content/articles.json (drone-weight, coffee-bag, filament) and the rest of topic-backlog.json — genuinely distinct from the gold/troy-ounce guide (different unit system, 1 ct = 200 mg exactly vs. troy ounces).
+- Self-verification: every carat→gram→pound figure in the draft (chart rows, famous-diamond weights, the 1 lb = 2,267.96 ct reverse conversion, points table) was recomputed against `assets/js/convert.js` before publishing; two unsourced weight comparisons ("lighter than a can of soup", "two US nickels") were caught as inaccurate during the pass and replaced with plain, verified figures.
+- Backlog remaining: 8
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission returned HTTP 403 again (same pattern as 2026-09-02, 09-04, 09-07). Consistent with the prior finding that this environment's outbound proxy blocks `api.indexnow.org` (not in its allowlist) — the key file (`90190755243dcbe1b1dd3ccc9d085dab.txt`) is unchanged and committed. Manual re-run recommended: `node tools/indexnow-submit.js https://gramstolbs.com/blog/diamond-carats-grams-to-pounds/` from an environment with unrestricted outbound access, or add `api.indexnow.org` to this environment's proxy allowlist.
+
 ## 2026-09-07
 - Published: Filament Spool Weight: 1kg in Pounds (Net vs Gross) (https://gramstolbs.com/blog/3d-printing-filament-grams-to-pounds/) — 1,433 words, 6 FAQs
 - Angle: 3D printer filament net weight (filament only, e.g. 1,000 g on a "1kg" spool) vs. gross weight (filament + empty spool, typically +150 to +260 g), covering the common spool sizes, how to weigh a spool to find remaining filament, and why boxed shipping weight runs noticeably higher than the label's net figure.

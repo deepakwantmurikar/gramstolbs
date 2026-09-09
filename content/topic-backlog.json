@@ -48,7 +48,8 @@
       "diamond weight in pounds"
     ],
     "cautions": "State the exact carat-to-gram definition (1 ct = 0.2 g exactly, a metric standard since 1907) and cite it. Do not give jewelry valuation or investment advice.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-09"
   },
   {
     "id": "deli-counter-grams-to-pounds",
