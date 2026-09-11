@@ -66,5 +66,22 @@
       "carat weight conversion chart"
     ],
     "llmsDesc": "A carat is defined as exactly 0.2 grams, which makes it 0.0004 pounds. Here is the full carat-to-gram-to-pound chart, plus what a pound of diamonds would actually mean."
+  },
+  {
+    "slug": "deli-counter-grams-to-pounds",
+    "title": "How Many Pounds to Ask For at the Deli When a Recipe Says Grams",
+    "excerpt": "A US deli scale reads pounds and ounces, not the grams your recipe gives you. Here is the chart and the formula to convert any recipe amount to what to say at the counter.",
+    "category": "Guide",
+    "cardAlt": "Deli counter conversion chart showing 250 grams equals 0.5512 pounds and 500 grams equals 1.1023 pounds, for converting a recipe gram amount to a pound order at a US deli counter",
+    "datePublished": "2026-09-11",
+    "dateModified": "2026-09-11",
+    "readMinutes": 4,
+    "keywords": [
+      "grams to pounds deli counter",
+      "how many pounds to ask for at the deli",
+      "convert recipe grams to pounds",
+      "deli meat grams to pounds chart"
+    ],
+    "llmsDesc": "A US deli scale reads pounds and ounces, not the grams your recipe gives you. Here is the chart and the formula to convert any recipe amount to what to say at the counter."
   }
 ]

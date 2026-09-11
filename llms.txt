@@ -19,6 +19,7 @@
 - [Coffee Bag Sizes in Pounds: 250g, 340g and 1kg Converted](https://gramstolbs.com/blog/coffee-bag-grams-to-pounds/): Every common specialty coffee bag size converted from grams to pounds, from a 250 g bag to a 1 kg bulk bag, plus how to compare price per pound when bag sizes don’t match.
 - [Filament Spool Weight: 1kg in Pounds (Net vs Gross)](https://gramstolbs.com/blog/3d-printing-filament-grams-to-pounds/): A 1kg filament spool is 1,000 grams of printable material, or 2.2046 pounds net. The empty spool adds 150 to 260 grams on top, so a full spool weighed on a scale reads higher than the label.
 - [Diamond Carats to Grams to Pounds (and Why They Differ)](https://gramstolbs.com/blog/diamond-carats-grams-to-pounds/): A carat is defined as exactly 0.2 grams, which makes it 0.0004 pounds. Here is the full carat-to-gram-to-pound chart, plus what a pound of diamonds would actually mean.
+- [How Many Pounds to Ask For at the Deli When a Recipe Says Grams](https://gramstolbs.com/blog/deli-counter-grams-to-pounds/): A US deli scale reads pounds and ounces, not the grams your recipe gives you. Here is the chart and the formula to convert any recipe amount to what to say at the counter.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
