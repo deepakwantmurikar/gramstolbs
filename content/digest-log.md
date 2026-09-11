@@ -4,6 +4,17 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-09-11
+- Published: How Many Pounds to Ask For at the Deli When a Recipe Says Grams (https://gramstolbs.com/blog/deli-counter-grams-to-pounds/) — 1,202 words, 6 FAQs
+- Angle: converting a recipe's gram amount into what to actually say at a US deli or butcher counter, since counter scales are calibrated in pounds and ounces, not grams or decimal pounds. Covers a 16-row chart of common recipe amounts (100 g–1,500 g), two full worked examples (350 g, 230 g), why US counters use lb/oz while gram-based recipes don't, and why hand-cut orders land close to but not exactly on the requested figure (common quarter-/half-pound counter increments).
+- Freshness pass: no live news hook specific to deli ordering; didn't force one, per SOP.
+- Duplicate check: clear against content/articles.json (drone-weight, coffee-bag, filament, diamond-carats) and the rest of topic-backlog.json — distinct from the food-labels guide (packaged goods with printed serving sizes) since this covers unpackaged, hand-weighed counter orders.
+- Self-verification: every gram→pound and gram→lb/oz figure in the chart and both worked examples was recomputed against `assets/js/convert.js` before publishing; all matched on the first pass.
+- First dry-run/audit cycle caught one real issue: the rendered `<title>` tag (metaTitle + " | gramstolbs.com" suffix) was 63 chars, over the site's 60-char head-tag rule flagged by `tools/audit.js`. Shortened metaTitle and republished; second audit came back clean ("no issues found").
+- Backlog remaining: 7
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission returned HTTP 403 again — same pattern as every prior run (2026-09-02, 09-04, 09-07, 09-09). Consistent with the standing finding that this environment's outbound proxy blocks `api.indexnow.org` (not in its allowlist); the key file (`90190755243dcbe1b1dd3ccc9d085dab.txt`) is unchanged and committed. Manual re-run recommended: `node tools/indexnow-submit.js https://gramstolbs.com/blog/deli-counter-grams-to-pounds/` from an environment with unrestricted outbound access, or add `api.indexnow.org` to this environment's proxy allowlist — this has now failed identically on five consecutive runs and is worth fixing at the infrastructure level rather than re-noting each time.
+
 ## 2026-09-09
 - Published: Diamond Carats to Grams to Pounds (and Why They Differ) (https://gramstolbs.com/blog/diamond-carats-grams-to-pounds/) — 1,553 words, 6 FAQs
 - Angle: the exact carat-to-gram definition (1 ct = 0.2 g, metric standard since 1907), a full carats-to-grams-to-pounds chart, the reverse fact (1 lb = 2,267.96 ct), three sourced famous-diamond weights (Cullinan, Hope, Excelsior) converted to pounds, and the points-to-carats notation. Stayed strictly to unit conversion per this topic's cautions — no jewelry valuation or investment advice anywhere in the draft.

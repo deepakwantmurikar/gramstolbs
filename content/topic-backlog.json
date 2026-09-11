@@ -61,7 +61,8 @@
       "convert recipe grams to pounds deli"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-11"
   },
   {
     "id": "pet-food-grams-to-pounds",
