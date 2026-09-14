@@ -83,5 +83,22 @@
       "deli meat grams to pounds chart"
     ],
     "llmsDesc": "A US deli scale reads pounds and ounces, not the grams your recipe gives you. Here is the chart and the formula to convert any recipe amount to what to say at the counter."
+  },
+  {
+    "slug": "pet-food-grams-to-pounds",
+    "title": "Pet Food Grams to Pounds: Dog and Cat Food Bag & Can Sizes",
+    "excerpt": "US pet food bags are priced and labeled in pounds, but portion charts, vet handouts and imported packaging are often printed in grams. Here is the chart to convert either direction.",
+    "category": "Guide",
+    "cardAlt": "Pet food weight conversion chart showing 400 grams equals 0.8818 pounds, 2 kilograms equals 4.4092 pounds, and a 30 pound bag equals 13.6078 kilograms",
+    "datePublished": "2026-09-14",
+    "dateModified": "2026-09-14",
+    "readMinutes": 5,
+    "keywords": [
+      "dog food grams to pounds",
+      "pet food portion grams to lbs",
+      "cat food grams to pounds",
+      "pet food bag size grams to pounds"
+    ],
+    "llmsDesc": "US pet food bags are priced and labeled in pounds, but portion charts, vet handouts and imported packaging are often printed in grams. Here is the chart to convert either direction."
   }
 ]

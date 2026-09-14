@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://gramstolbs.com/blog/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -105,6 +105,12 @@
   <url>
     <loc>https://gramstolbs.com/blog/deli-counter-grams-to-pounds/</loc>
     <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gramstolbs.com/blog/pet-food-grams-to-pounds/</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
