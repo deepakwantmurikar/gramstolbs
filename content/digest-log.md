@@ -4,6 +4,18 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-09-14
+- Published: Pet Food Grams to Pounds: Dog and Cat Food Bag & Can Sizes (https://gramstolbs.com/blog/pet-food-grams-to-pounds/) — 1,237 words, 6 FAQs
+- Angle: converting pet food weights between grams (portion charts, vet handouts, imported/metric packaging) and pounds (how US bags are priced). Covers a US bag-size chart (3–40 lb in grams/kg), an imported kilogram-bag chart (1–20 kg in lb), a wet-food/treat chart (85 g–2,000 g in decimal lb and lb/oz), and two worked examples (340 g → lb/oz, 1.5 lb → g). Strictly unit conversion per this topic's cautions — added a dedicated "What this page does not do" section stating explicitly that it does not recommend any feeding amount, portion, or dosage, and that portioning judgment belongs to the package's own guidelines or a vet.
+- Freshness pass: no live news hook specific to pet food unit conversion; surfaced 2026 pet-food recalls in research but they're a different topic (contamination/safety, not weight units) and would have pulled the piece off scope, so it wasn't used.
+- Duplicate check: clear against content/articles.json (drone-weight, coffee-bag, filament, diamond-carats, deli-counter) and the rest of topic-backlog.json — distinct audience/intent from the food-labels guide (human nutrition-panel serving sizes) per the backlog's own rationale for this topic.
+- Self-verification: every bag-size, kg-comparison, wet-food, and worked-example figure was recomputed against `assets/js/convert.js` at the terminal before writing; all matched on the first pass, no corrections needed.
+- No cross-link added from an existing guide — no published article is topically close enough to force one without it reading as unrelated.
+- Housekeeping note (no actual problem, just a correction to how it looked mid-run): this session started in a detached HEAD, and the local `origin/main` tracking ref hadn't been fetched, so it appeared stale (pointing at the 2026-09-07 commit) even though the real remote was already current through the 2026-09-11 deli-counter run. Confirmed via `git push`'s own before/after range that origin was already at the 09-11 commit before today's push added only this run's commit — nothing from prior runs was actually missing or unpushed. No action needed.
+- Backlog remaining: 6
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission returned HTTP 403 again — same pattern as every prior run (2026-09-02 through 2026-09-11, 6 consecutive failures). Consistent with the standing finding that this environment's outbound proxy blocks `api.indexnow.org`; the key file (`90190755243dcbe1b1dd3ccc9d085dab.txt`) is unchanged and committed. Same recommendation as prior entries: add `api.indexnow.org` to this environment's proxy allowlist, or run the submit script from an environment with unrestricted outbound access.
+
 ## 2026-09-11
 - Published: How Many Pounds to Ask For at the Deli When a Recipe Says Grams (https://gramstolbs.com/blog/deli-counter-grams-to-pounds/) — 1,202 words, 6 FAQs
 - Angle: converting a recipe's gram amount into what to actually say at a US deli or butcher counter, since counter scales are calibrated in pounds and ounces, not grams or decimal pounds. Covers a 16-row chart of common recipe amounts (100 g–1,500 g), two full worked examples (350 g, 230 g), why US counters use lb/oz while gram-based recipes don't, and why hand-cut orders land close to but not exactly on the requested figure (common quarter-/half-pound counter increments).
