@@ -4,6 +4,17 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-09-16
+- Published: Shipping Weight Brackets: US, UK, Canada & Australia (https://gramstolbs.com/blog/international-shipping-brackets-by-country/) — 1,242 words, 6 FAQs
+- Angle: postal weight bracket boundaries for USPS, Royal Mail, Canada Post and Australia Post, converted to grams and pounds and lined up side by side, plus how each carrier rounds a scale weight into a bracket and a worked example showing where one 3,200 g parcel lands under all four systems. Per this topic's cautions, the page states weight brackets only — no prices anywhere on the page, and a note that current pricing should be confirmed on each carrier's own site.
+- Freshness pass: worked in the 2026 dimensional-weight divisor change (USPS and FedEx/UPS shifting from a 166 to a 139 divisor, meaning dimensions now round up to the next whole inch) as the "why bills can run higher than scale weight" section — genuine current relevance, not forced.
+- Duplicate check: clear against content/articles.json (no prior article on shipping/postal weight) and the rest of topic-backlog.json. Distinct from the existing static guide at guides/shipping-weight-grams-to-pounds (that page covers US carrier rounding-up mechanics in general, with its own bracket table); this article is a structural country-by-country comparison instead, confirmed by reading that guide's existing content before drafting.
+- Self-verification: every gram→pound figure (10 country/bracket rows, the 4-stat quick-answer grid, and the 3,200 g worked example) was recomputed against `assets/js/convert.js` before publishing; all matched on the first pass except one worked-example figure (7.0547 → corrected to 7.0548 lb) caught during the check.
+- Cross-link added: one contextual sentence in the existing guides/shipping-weight-grams-to-pounds page, linking to this new article for readers wanting the UK/Canada/Australia comparison.
+- Backlog remaining: 5
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission returned HTTP 403 again — the sixth consecutive run with this exact failure (also 2026-09-02, 09-04, 09-07, 09-09, 09-14). Consistent with the standing finding that this environment's outbound proxy blocks `api.indexnow.org`; the key file (`90190755243dcbe1b1dd3ccc9d085dab.txt`) is unchanged and committed. This is now a well-established infrastructure issue, not a per-run fluke — worth fixing the proxy allowlist rather than continuing to note it each time.
+
 ## 2026-09-14
 - Published: Pet Food Grams to Pounds: Dog and Cat Food Bag & Can Sizes (https://gramstolbs.com/blog/pet-food-grams-to-pounds/) — 1,237 words, 6 FAQs
 - Angle: converting pet food weights between grams (portion charts, vet handouts, imported/metric packaging) and pounds (how US bags are priced). Covers a US bag-size chart (3–40 lb in grams/kg), an imported kilogram-bag chart (1–20 kg in lb), a wet-food/treat chart (85 g–2,000 g in decimal lb and lb/oz), and two worked examples (340 g → lb/oz, 1.5 lb → g). Strictly unit conversion per this topic's cautions — added a dedicated "What this page does not do" section stating explicitly that it does not recommend any feeding amount, portion, or dosage, and that portioning judgment belongs to the package's own guidelines or a vet.

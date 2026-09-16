@@ -87,7 +87,8 @@
       "usps weight bracket grams"
     ],
     "cautions": "Carrier weight brackets change; state that rates should be confirmed on the carrier's own site and that this page gives the unit conversion, not current pricing. Do not state specific prices, only weight-bracket conversions.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-16"
   },
   {
     "id": "yarn-craft-grams-to-pounds",
