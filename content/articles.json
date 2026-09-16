@@ -100,5 +100,22 @@
       "pet food bag size grams to pounds"
     ],
     "llmsDesc": "US pet food bags are priced and labeled in pounds, but portion charts, vet handouts and imported packaging are often printed in grams. Here is the chart to convert either direction."
+  },
+  {
+    "slug": "international-shipping-brackets-by-country",
+    "title": "Shipping Weight Brackets: US, UK, Canada & Australia",
+    "excerpt": "USPS, Royal Mail, Canada Post and Australia Post postal weight brackets, converted to grams and pounds and lined up side by side for anyone shipping internationally.",
+    "category": "Guide",
+    "cardAlt": "International shipping weight bracket comparison chart showing Royal Mail large letter at 750 grams equals 1.6535 pounds and Australia Post 22 kilogram parcel maximum equals 48.5017 pounds",
+    "datePublished": "2026-09-16",
+    "dateModified": "2026-09-16",
+    "readMinutes": 4,
+    "keywords": [
+      "international shipping weight grams pounds",
+      "royal mail weight bands lbs",
+      "usps weight bracket grams",
+      "shipping weight brackets by country"
+    ],
+    "llmsDesc": "USPS, Royal Mail, Canada Post and Australia Post postal weight brackets, converted to grams and pounds and lined up side by side for anyone shipping internationally."
   }
 ]
