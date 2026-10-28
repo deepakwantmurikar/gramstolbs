@@ -9,7 +9,8 @@
       "FAA drone weight limit lbs"
     ],
     "cautions": "State the 250g figure and cite the FAA source; do not give legal advice beyond the published threshold. Note UK/EU/Australia have their own thresholds — do not imply the US figure applies everywhere.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-02"
   },
   {
     "id": "coffee-bag-grams-to-pounds",
@@ -21,7 +22,8 @@
       "how many pounds is 1kg of coffee"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-04"
   },
   {
     "id": "3d-printing-filament-grams-to-pounds",
@@ -33,7 +35,8 @@
       "3d printer filament weight lbs"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-07"
   },
   {
     "id": "diamond-carats-grams-to-pounds",
@@ -45,7 +48,8 @@
       "diamond weight in pounds"
     ],
     "cautions": "State the exact carat-to-gram definition (1 ct = 0.2 g exactly, a metric standard since 1907) and cite it. Do not give jewelry valuation or investment advice.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-09"
   },
   {
     "id": "deli-counter-grams-to-pounds",
@@ -57,7 +61,8 @@
       "convert recipe grams to pounds deli"
     ],
     "cautions": "None.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-11"
   },
   {
     "id": "pet-food-grams-to-pounds",
@@ -69,7 +74,8 @@
       "cat food grams to pounds"
     ],
     "cautions": "This is a unit conversion page, not feeding or veterinary advice — do not recommend portion sizes, only convert whatever figure the reader already has (e.g., from packaging or a vet).",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-14"
   },
   {
     "id": "international-shipping-brackets-by-country",
@@ -81,7 +87,8 @@
       "usps weight bracket grams"
     ],
     "cautions": "Carrier weight brackets change; state that rates should be confirmed on the carrier's own site and that this page gives the unit conversion, not current pricing. Do not state specific prices, only weight-bracket conversions.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-09-16"
   },
   {
     "id": "yarn-craft-grams-to-pounds",

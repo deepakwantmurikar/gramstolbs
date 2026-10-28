@@ -31,7 +31,20 @@ function findChrome() {
     '/usr/bin/google-chrome',
     '/usr/bin/chromium-browser'
   ];
-  const found = candidates.find((c) => fs.existsSync(c));
+  let found = candidates.find((c) => fs.existsSync(c));
+
+  // Playwright's bundled Chromium, present in some CI/sandbox environments
+  // (PLAYWRIGHT_BROWSERS_PATH), where no system Chrome is installed.
+  if (!found) {
+    const pwRoot = process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/pw-browsers';
+    if (fs.existsSync(pwRoot)) {
+      const versionDir = fs.readdirSync(pwRoot).find((d) => d.startsWith('chromium-'));
+      if (versionDir) {
+        const candidate = path.join(pwRoot, versionDir, 'chrome-linux', 'chrome');
+        if (fs.existsSync(candidate)) found = candidate;
+      }
+    }
+  }
   if (!found) {
     throw new Error(
       'No Chrome/Edge executable found. Set CHROME_PATH to its full path, e.g.\n' +
@@ -114,8 +127,11 @@ function renderFeaturedImage({ title, eyebrow, stats, out }) {
 
   fs.mkdirSync(path.dirname(out), { recursive: true });
 
+  const rootFlags = (process.getuid && process.getuid() === 0) ? ['--no-sandbox'] : [];
+
   execFileSync(chrome, [
     '--headless=new', '--disable-gpu', '--hide-scrollbars',
+    ...rootFlags,
     '--virtual-time-budget=6000',
     '--window-size=1200,630',
     '--screenshot=' + out,
