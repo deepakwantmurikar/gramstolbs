@@ -15,7 +15,7 @@
 - [Food labels](https://gramstolbs.com/guides/food-label-grams-to-pounds/): converting package and nutrition label weights between grams and pounds.
 
 ## Blog
-- [Blog](https://gramstolbs.com/blog/): New grams to lbs articles, published regularly.
+- [Grams to Pounds Conversion Chart (1 g to 10,000 g)](https://gramstolbs.com/blog/grams-to-pounds-conversion-chart/): A full reference table from 100 g to 10,000 g, in decimal pounds and in pounds and ounces, plus quick answers for the values people look up most.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
