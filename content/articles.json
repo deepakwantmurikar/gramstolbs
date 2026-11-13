@@ -134,5 +134,23 @@
       "shipping weight brackets by country"
     ],
     "llmsDesc": "USPS, Royal Mail, Canada Post and Australia Post postal weight brackets, converted to grams and pounds and lined up side by side for anyone shipping internationally."
+  },
+  {
+    "slug": "yarn-craft-grams-to-pounds",
+    "title": "Yarn Weight in Pounds: Converting Skein Grams for Bulk Buying",
+    "excerpt": "Yarn and craft skein weights are printed in grams, but wholesale cones and bulk packs are usually priced by the pound. Here is the chart, the formula, and how many skeins actually make a pound.",
+    "category": "Guide",
+    "cardAlt": "Yarn weight conversion chart showing a 100 gram skein equals 0.2205 pounds and a 5 pound wholesale cone equals 2267.96 grams",
+    "datePublished": "2026-11-13",
+    "dateModified": "2026-11-13",
+    "readMinutes": 6,
+    "keywords": [
+      "yarn grams to pounds",
+      "how many pounds of yarn",
+      "skein weight grams to lbs",
+      "how many skeins in a pound of yarn",
+      "yarn weight conversion chart"
+    ],
+    "llmsDesc": "Yarn and craft skein weights are printed in grams, but wholesale cones and bulk packs are usually priced by the pound. Here is the chart, the formula, and how many skeins actually make a pound."
   }
 ]
