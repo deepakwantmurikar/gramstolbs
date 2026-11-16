@@ -4,6 +4,17 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-11-16
+- Published: Protein Powder Tub Sizes: Grams to Pounds Compared (https://gramstolbs.com/blog/protein-powder-grams-to-pounds/) — 1,363 words, 6 FAQs
+- Angle: US tub sizes (1–10 lb) converted to grams/kg, international tub sizes (500 g–2.5 kg) converted to pounds, how to compare price per pound/100 g when tub sizes don't match, and a worked example converting an arbitrary gram figure. Caution respected: kept strictly to container net weight and price-per-weight — no scoop sizes, serving counts, or protein-per-serving figures, since the backlog entry scopes this topic to unit conversion only, not dosing/serving-size advice.
+- Freshness pass: 2026 supplement-industry coverage (Stack3d, etc.) shows several brands adjusting tub net weights in both directions (smaller reformulated tubs, bigger bulk "super size" formats). Used only as a general, unattributed-to-specifics framing paragraph — not cited as fact for any single brand's numbers, since those came from secondary blog summaries rather than primary brand pages.
+- Duplicate check: clear against content/articles.json (all 9 prior articles — none touch supplements/protein) and the rest of topic-backlog.json — no overlap.
+- Research note: PAA-style questions pulled from real search results (scoop-weight pages, supplement blogs, a Mountain Project forum thread on cost-per-gram-of-protein) — not invented. Deliberately did not use scoop/serving-count data points from that research in the FAQs, per the topic's cautions.
+- Self-verification: every tub-size, price-per-pound, and worked-example figure recomputed against `assets/js/convert.js` before publishing. Caught and fixed one real mismatch: the 1,350 g worked example was originally drafted as 2.9768 lb / 15.63 oz; the recompute gave 2.9762 lb / 15.62 oz. Fixed before validating.
+- Backlog remaining: 3 — at the low-water mark. Flagging for Deepak to review and add more vetted topics soon.
+- Still manual: Google Search Console submission for today's URL.
+- IndexNow submission failed again: `getaddrinfo ENOTFOUND api.indexnow.org`, consistent with every prior run (HTTP 403 or DNS failure depending on the run) — this environment's network policy still doesn't allow `api.indexnow.org`. Same standing recommendation: add it to the environment's allowed hosts, or re-run `node tools/indexnow-submit.js https://gramstolbs.com/blog/protein-powder-grams-to-pounds/` from an environment with outbound access to it.
+
 ## 2026-11-13
 - Published: Yarn Weight in Pounds: Converting Skein Grams for Bulk Buying (https://gramstolbs.com/blog/yarn-craft-grams-to-pounds/) — 1,521 words, 6 FAQs
 - Angle: skein/ball weights (printed in grams) converted to pounds for US bulk/wholesale craft buying, covering common skein sizes (25 g–500 g), wholesale cone/pack sizes (1–10 lb), the exact "how many skeins per pound" math (≈9.07 × 50 g skeins, not the "about eight" shortcut some retailers quote), a pattern-total worked example (1,800 g), the yarn-weight-category-vs-mass distinction (CYC lace→jumbo is thickness, not grams), and a short extension to other weight-sold craft fill (fiberfill, batting, spinning fiber), with fabric (GSM, area-based) explicitly called out as out of scope for this conversion. No cautions on this topic (not YMYL).
