@@ -24,6 +24,7 @@
 - [Pet Food Grams to Pounds: Dog and Cat Food Bag & Can Sizes](https://gramstolbs.com/blog/pet-food-grams-to-pounds/): US pet food bags are priced and labeled in pounds, but portion charts, vet handouts and imported packaging are often printed in grams. Here is the chart to convert either direction.
 - [Shipping Weight Brackets: US, UK, Canada & Australia](https://gramstolbs.com/blog/international-shipping-brackets-by-country/): USPS, Royal Mail, Canada Post and Australia Post postal weight brackets, converted to grams and pounds and lined up side by side for anyone shipping internationally.
 - [Yarn Weight in Pounds: Converting Skein Grams for Bulk Buying](https://gramstolbs.com/blog/yarn-craft-grams-to-pounds/): Yarn and craft skein weights are printed in grams, but wholesale cones and bulk packs are usually priced by the pound. Here is the chart, the formula, and how many skeins actually make a pound.
+- [Protein Powder Tub Sizes: Grams to Pounds Compared](https://gramstolbs.com/blog/protein-powder-grams-to-pounds/): US protein powder tubs are sized in pounds while most international tubs are labeled in grams or kilograms. Here is every common tub size converted both ways, plus how to compare price when sizes don’t match.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
