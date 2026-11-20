@@ -139,7 +139,8 @@
       "how many pounds of formula"
     ],
     "cautions": "YMYL-adjacent — strictly unit conversion of container/product weight only. Do NOT state feeding amounts, scoop-to-ounce ratios implying dosage, or any feeding guidance. If a draft cannot stay on the safe side of that line, skip this topic rather than publish it.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-11-20"
   },
   {
     "id": "vintage-coin-grams-to-pounds",
