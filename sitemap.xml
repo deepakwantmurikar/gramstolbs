@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://gramstolbs.com/blog/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -141,6 +141,12 @@
   <url>
     <loc>https://gramstolbs.com/blog/silver-platinum-grams-to-pounds/</loc>
     <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gramstolbs.com/blog/baby-formula-portions-grams-to-pounds/</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

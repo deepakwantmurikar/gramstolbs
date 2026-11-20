@@ -1,0 +1,249 @@
+/* Draft: Baby Formula Tub Sizes — Grams to Pounds
+   Backlog id: baby-formula-portions-grams-to-pounds
+   Angle: converting infant formula container sizes between grams, ounces
+   and pounds, for comparing a US tub against an international tin when
+   buying — US tubs are labeled by net weight in ounces, international tins
+   in grams, which makes a straight size or price comparison hard without
+   converting first.
+   Caution from the backlog entry: YMYL-adjacent — strictly unit conversion
+   of container/product weight only. This draft deliberately never states a
+   scoop size, a feeding amount, a prepared/mixed yield, or any ratio that
+   could read as feeding or dosing guidance; every figure here is a net
+   container weight, a price-per-weight figure, or a label-rounding example,
+   nothing else.
+   Every number below is taken from assets/js/convert.js, re-derived at the
+   terminal before writing (see the self-verification note in the write-
+   article skill) — not estimated.
+*/
+
+module.exports = {
+  slug: 'baby-formula-portions-grams-to-pounds',
+  title: 'Baby Formula Tub Sizes: Grams to Pounds Compared',
+  metaTitle: 'Baby Formula Grams to Pounds: Container Size Chart',
+  metaDesc: 'Convert baby formula container sizes between grams, ounces and pounds, with a US tub and international tin chart for comparing sizes when buying.',
+  category: 'Guide',
+  keywords: [
+    'baby formula grams to pounds',
+    'formula tub weight lbs',
+    'how many pounds of formula',
+    'baby formula ounces to grams',
+    '800g formula tin in pounds'
+  ],
+  excerpt: 'Converting infant formula container sizes between grams, ounces and pounds to compare a US tub against an international tin — net container weight only, no feeding or scoop guidance.',
+  dek: 'A 20.7 oz US tub and an 800 g international tin are both common formula sizes that look nothing alike until they are converted to the same unit. This converts every common container size both ways, for comparing size and price only.',
+  datePublished: '2026-11-20',
+  featuredImage: {
+    eyebrow: 'Guide · Baby Formula',
+    stats: ['800 g tin|1.7637 lb', '900 g tin|31.75 oz', '20.7 oz tub|586.84 g']
+  },
+  featuredImageAlt: 'Baby formula container size conversion chart showing an 800 gram tin equals 1.7637 pounds and a 20.7 ounce US tub equals 586.84 grams',
+  toc: [
+    { id: 'answer', label: 'The quick answer' },
+    { id: 'us-sizes', label: 'US tub sizes in grams' },
+    { id: 'intl-sizes', label: 'International tin sizes in pounds' },
+    { id: 'price', label: 'Comparing price per pound' },
+    { id: 'worked', label: 'Converting a size yourself' },
+    { id: 'why-differ', label: 'Why labels don’t match' },
+    { id: 'label-rounding', label: 'When a label rounds the figure' },
+    { id: 'faq', label: 'FAQ' }
+  ],
+  sources: [
+    'International Yard and Pound Agreement, 1959 &mdash; defines the international avoirdupois pound as exactly 453.59237 g and the avoirdupois ounce as exactly 28.349523125 g',
+    'NIST Special Publication 811, <em>Guide for the Use of the International System of Units (SI)</em> &mdash; exact conversion factors between metric and customary units'
+  ],
+  bodyHTML: `
+    <p class="lead">Baby formula containers are sized in grams almost everywhere outside the
+    US and in ounces inside it, so an 800 gram European tin and a 20.7 ounce US tub cannot be
+    compared by their printed numbers alone. Divide grams by 453.59237 to get pounds, or
+    multiply ounces by 28.349523125 to get grams &mdash; the charts below apply that to the
+    container sizes actually sold, covering net product weight and price only, not feeding
+    amounts or scoop sizes.</p>
+
+    <h2 id="answer">The quick answer</h2>
+
+    <p>An 800 gram infant formula tin is 1.7637 pounds, and a 20.7 ounce US formula tub is
+    586.84 grams &mdash; both figures come from the fixed relationship between the units (1
+    pound equals exactly 453.59237 grams, 1 ounce equals exactly 28.349523125 grams), not an
+    approximation. These three container sizes cover most of what shows up on a formula aisle
+    shelf or an import listing:</p>
+
+    <div class="card-grid">
+      <article class="card stat-card">
+        <span class="stat-g">800 g tin</span>
+        <span class="stat-lb">1.7637 lb</span>
+        <span class="stat-oz">1 lb 12.22 oz</span>
+      </article>
+      <article class="card stat-card">
+        <span class="stat-g">900 g tin</span>
+        <span class="stat-lb">1.9842 lb</span>
+        <span class="stat-oz">1 lb 15.75 oz</span>
+      </article>
+      <article class="card stat-card">
+        <span class="stat-g">20.7 oz tub</span>
+        <span class="stat-lb">586.84 g</span>
+        <span class="stat-oz">0.5868 kg</span>
+      </article>
+    </div>
+
+    <h2 id="us-sizes">US tub sizes converted to grams and kilograms</h2>
+
+    <p>US infant formula tubs are labeled by net weight in ounces, most commonly in the 20
+    to 24 ounce range for a standard tub and up to 36 to 48 ounces for value and club-store
+    sizes. Converting each to grams and kilograms makes it possible to line a US tub up
+    against an international tin labeled the other way:</p>
+
+    <div class="table-scroll breakout">
+      <table>
+        <caption>US baby formula tub size converted to grams and kilograms</caption>
+        <thead>
+          <tr><th scope="col">Tub size (oz)</th><th scope="col">Grams (g)</th><th scope="col">Kilograms (kg)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>20.1 oz</td><td>569.83 g</td><td>0.5698 kg</td></tr>
+          <tr><td>20.6 oz</td><td>584.00 g</td><td>0.5840 kg</td></tr>
+          <tr><td>20.7 oz</td><td>586.84 g</td><td>0.5868 kg</td></tr>
+          <tr><td>22.5 oz</td><td>637.86 g</td><td>0.6379 kg</td></tr>
+          <tr><td>23.2 oz</td><td>657.71 g</td><td>0.6577 kg</td></tr>
+          <tr><td>27.4 oz</td><td>776.78 g</td><td>0.7768 kg</td></tr>
+          <tr><td>30.2 oz</td><td>856.16 g</td><td>0.8562 kg</td></tr>
+          <tr><td>30.8 oz</td><td>873.17 g</td><td>0.8732 kg</td></tr>
+          <tr><td>36.6 oz</td><td>1,037.59 g</td><td>1.0376 kg</td></tr>
+          <tr><td>40 oz</td><td>1,133.98 g</td><td>1.1340 kg</td></tr>
+          <tr><td>48 oz</td><td>1,360.78 g</td><td>1.3608 kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The gap between a 20.1 ounce tub and a 48 ounce club-store tub is not small: at
+    1,360.78 grams, the 48 ounce tub holds more than double the powder of the 20.1 ounce tub
+    at 569.83 grams, even though "48" does not look like "more than double 20" at a glance.
+    Reading the gram figure makes the actual size difference concrete instead of relying on
+    the ounce number alone.</p>
+
+    <h2 id="intl-sizes">International tin sizes converted to pounds</h2>
+
+    <p>International infant formula tins, common across the UK, Ireland, the EU and
+    Australia, are labeled in grams, most often 400 g, 600 g, 800 g or 900 g. None of these
+    line up exactly with a whole-pound or whole-ounce US size, which is why a straight
+    label-to-label comparison is misleading:</p>
+
+    <div class="table-scroll breakout">
+      <table>
+        <caption>International baby formula tin size converted to ounces and pounds</caption>
+        <thead>
+          <tr><th scope="col">Tin size (g)</th><th scope="col">Ounces (oz)</th><th scope="col">Decimal pounds</th><th scope="col">Pounds &amp; ounces</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>400 g</td><td>14.11 oz</td><td>0.8818 lb</td><td>0 lb 14.11 oz</td></tr>
+          <tr><td>600 g</td><td>21.16 oz</td><td>1.3228 lb</td><td>1 lb 5.16 oz</td></tr>
+          <tr><td>800 g</td><td>28.22 oz</td><td>1.7637 lb</td><td>1 lb 12.22 oz</td></tr>
+          <tr><td>900 g</td><td>31.75 oz</td><td>1.9842 lb</td><td>1 lb 15.75 oz</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>800 g is the single most common tin size across the UK and Ireland, used by multiple
+    major brands' standard first-infant tins. 900 g shows up more often in Australia, on
+    some brands' larger tins, where it sits close to &mdash; but is not the same as &mdash;
+    a 2 pound US size (907.18 g); the difference is 7.18 grams, small enough to ignore for
+    most buying decisions but large enough that the two figures are not interchangeable on a
+    spec sheet or an import declaration.</p>
+
+    <h2 id="price">Comparing price per pound when a tub is priced in ounces and a tin in grams</h2>
+
+    <p>The only fair way to compare an ounce-priced US tub against a gram-priced
+    international tin is price per pound (or per 100 grams), not price per container. A 586.84
+    gram tub and an 800 gram tin are not simply "about the same size," they are two specific
+    weights, and converting both to the same unit before comparing price is what actually
+    shows which is the better value:</p>
+
+    <div class="worked">
+      Tub A: 20.7 oz (586.84 g) at $27.49 &rarr; 1.2938 lb &rarr; <strong>$21.25 per pound</strong><br>
+      Tin B: 800 g at $24.99 &rarr; 1.7637 lb &rarr; <strong>$14.17 per pound</strong><br>
+      Same comparison per 100 g: Tub A <strong>$4.68</strong>, Tin B <strong>$3.12</strong>
+    </div>
+
+    <p>In this example, Tin B works out to roughly a third cheaper per pound than Tub A, a
+    difference that is invisible if the two listings are only compared by sticker price or by
+    container count. The figures above are an illustration of the method, not a current
+    price quote &mdash; apply the same two steps (convert both net weights to the same unit,
+    then divide each price by that weight) to whatever prices and sizes are actually in
+    front of you.</p>
+
+    <h2 id="worked">Converting a formula container size yourself</h2>
+
+    <p>To convert any container weight not already in the charts above, multiply ounces by
+    28.349523125 to get grams, or divide grams by 453.59237 to get pounds. Here is 1,200
+    grams, a larger tin size between the rows shown above:</p>
+
+    <div class="worked">
+      1,200 &divide; 453.59237 = <strong>2.6455</strong> lb<br>
+      whole pounds &rarr; <strong>2</strong> lb<br>
+      0.6455 &times; 16 = <strong>10.33</strong> oz<br>
+      result &rarr; <strong>2 lb 10.33 oz</strong>
+    </div>
+
+    <p>The <a href="../../">converter</a> does this calculation instantly for any gram or
+    ounce figure, with a choice of 2, 4 or 6 decimal places, which is useful when a product
+    listing or a customs form gives a container weight that does not match a round chart
+    value.</p>
+
+    <h2 id="why-differ">Why US and international formula labels use different units</h2>
+
+    <p>US infant formula is labeled in ounces because the US uses the avoirdupois ounce and
+    pound as its standard retail weight units, while most other countries label in grams or
+    kilograms under their own metric packaging regulations. Neither system is more accurate
+    than the other &mdash; one ounce is defined as exactly 28.349523125 grams and one pound
+    as exactly 453.59237 grams, so converting between them is a fixed, exact calculation
+    rather than an approximation, and the mismatch is purely about which unit a given
+    market's packaging rules require.</p>
+
+    <p>Container sizes within a single brand can also differ slightly between the markets it
+    sells in, even for what looks like "the same" product line, because each market's
+    standard retail sizes are set independently rather than translated from one unit to the
+    other. Whatever the net weight on a specific tin or tub reads, in grams or in ounces,
+    28.349523125 and 453.59237 are the fixed numbers that move that figure from one unit to
+    the other.</p>
+
+    <h2 id="label-rounding">When a brand's own label rounds the figure</h2>
+
+    <p>Some brands print a rounded cross-unit figure on the package itself, and that rounded
+    figure can differ slightly from the precise conversion. One widely sold 900 gram
+    international tin is listed by its own manufacturer with a companion figure of "32 oz" on
+    its packaging and product pages &mdash; a convenient round number, but the precise
+    conversion of 900 grams is 31.75 ounces, about a quarter of an ounce less than the rounded
+    figure printed alongside it.</p>
+
+    <p>That quarter-ounce gap will not change a buying decision, but it matters when a
+    precise figure is needed &mdash; for a customs declaration, a shipping weight estimate, or
+    simply checking a retailer's own numbers against each other. The gram figure printed on
+    the tin is the primary, exact net weight; a rounded ounce or pound figure alongside it is
+    a convenience, not a more precise number.</p>
+  `,
+  faqs: [
+    {
+      q: 'How many grams is a 20.7 ounce tub of baby formula?',
+      a: 'A 20.7 ounce tub of baby formula is 586.84 grams, or 0.5868 kilograms, from multiplying 20.7 by 28.349523125, the exact number of grams in one ounce. This is the tub’s net container weight, the figure printed on US packaging.'
+    },
+    {
+      q: 'How many pounds is an 800 gram tin of baby formula?',
+      a: 'An 800 gram tin of baby formula is 1.7637 pounds, or 1 pound 12.22 ounces written as pounds and ounces. This comes from dividing 800 by 453.59237, the fixed number of grams in one pound, and applies to any 800 gram container regardless of brand.'
+    },
+    {
+      q: 'Does a 900 gram formula tin equal 2 pounds?',
+      a: 'No. A 900 gram tin is 1.9842 pounds (31.75 ounces), while 2 pounds is 907.18 grams — a difference of 7.18 grams. The two are close enough to look interchangeable on a shelf, but they are not the same weight on a spec sheet or an import form.'
+    },
+    {
+      q: 'Why is one brand’s 900 gram tin labeled 32 ounces when the exact conversion is 31.75 ounces?',
+      a: 'That brand rounds its own cross-unit figure for a cleaner number on the package. The precise conversion of 900 grams is 31.75 ounces (900 divided by 28.349523125); 32 ounces would actually be 907.18 grams. The gram figure is the primary net weight, and the ounce figure next to it is a rounded convenience.'
+    },
+    {
+      q: 'Why do US formula tubs use ounces while international tins use grams?',
+      a: 'It depends on which market the container is packaged for. US retail packaging is weighed and labeled in ounces and pounds, the country’s standard units for retail goods, while most other countries label in grams or kilograms under their own metric packaging rules. Neither unit is more precise; the conversion between them is a fixed, exact calculation either way.'
+    },
+    {
+      q: 'How do I compare price between a formula tub priced in ounces and a tin priced in grams?',
+      a: 'Convert both containers’ net weight to the same unit first, then divide each price by that weight. For example, a 20.7 ounce tub (586.84 g) at $27.49 works out to $21.25 per pound, while an 800 gram tin (1.7637 lb) at $24.99 works out to $14.17 per pound — a difference only visible once both are converted to the same unit.'
+    }
+  ]
+};
