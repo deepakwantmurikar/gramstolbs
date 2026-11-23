@@ -206,5 +206,23 @@
       "800g formula tin in pounds"
     ],
     "llmsDesc": "Converting infant formula container sizes between grams, ounces and pounds to compare a US tub against an international tin — net container weight only, no feeding or scoop guidance."
+  },
+  {
+    "slug": "vintage-coin-grams-to-pounds",
+    "title": "Bullion & Vintage Coin Weight Standards: Grams to Pounds",
+    "excerpt": "The official minted weight of major bullion and vintage coins — American Eagle, Krugerrand, Sovereign, double eagle and more — converted from grams and troy ounces to pounds.",
+    "category": "Guide",
+    "cardAlt": "Bullion coin weight conversion chart showing a 1 ounce American Gold Eagle at 33.931 grams equals 0.0748 pounds and a British gold sovereign at 7.98805 grams equals 0.0176 pounds",
+    "datePublished": "2026-11-23",
+    "dateModified": "2026-11-23",
+    "readMinutes": 6,
+    "keywords": [
+      "gold coin weight grams to pounds",
+      "silver eagle weight in pounds",
+      "bullion coin weight conversion",
+      "how much does a gold sovereign weigh",
+      "double eagle coin weight grams"
+    ],
+    "llmsDesc": "The official minted weight of major bullion and vintage coins — American Eagle, Krugerrand, Sovereign, double eagle and more — converted from grams and troy ounces to pounds."
   }
 ]

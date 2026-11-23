@@ -27,6 +27,7 @@
 - [Protein Powder Tub Sizes: Grams to Pounds Compared](https://gramstolbs.com/blog/protein-powder-grams-to-pounds/): US protein powder tubs are sized in pounds while most international tubs are labeled in grams or kilograms. Here is every common tub size converted both ways, plus how to compare price when sizes don’t match.
 - [Silver and Platinum Weight: Grams to Pounds (Troy Ounce)](https://gramstolbs.com/blog/silver-platinum-grams-to-pounds/): Silver and platinum are weighed in troy ounces, not the avoirdupois ounces and pounds used for everyday goods. Here is the gram and pound figure for common coin and bar sizes, plus the exact math behind the conversion.
 - [Baby Formula Tub Sizes: Grams to Pounds Compared](https://gramstolbs.com/blog/baby-formula-portions-grams-to-pounds/): Converting infant formula container sizes between grams, ounces and pounds to compare a US tub against an international tin — net container weight only, no feeding or scoop guidance.
+- [Bullion & Vintage Coin Weight Standards: Grams to Pounds](https://gramstolbs.com/blog/vintage-coin-grams-to-pounds/): The official minted weight of major bullion and vintage coins — American Eagle, Krugerrand, Sovereign, double eagle and more — converted from grams and troy ounces to pounds.
 
 ## Reference
 - [Methodology](https://gramstolbs.com/methodology/): exact constants, formulas, rounding rule and primary sources.
