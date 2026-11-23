@@ -152,6 +152,7 @@
       "bullion coin weight conversion"
     ],
     "cautions": "State only the physical weight standard of each coin as minted; no pricing, grading, or investment claims.",
-    "status": "open"
+    "status": "published",
+    "publishedDate": "2026-11-23"
   }
 ]
