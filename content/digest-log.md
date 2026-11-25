@@ -4,6 +4,12 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-11-25
+- Skipped: backlog is empty. `node tools/next-topic.js` returned `"topic": null, "remaining": 0` — this was expected per the 2026-11-23 entry below, which flagged that the vintage-coin topic was the last open backlog entry.
+- No article published, no files touched other than this digest entry, no draft written, nothing committed to `content/articles.json` or `content/topic-backlog.json`.
+- Per SOP (`.claude/skills/write-article/SKILL.md`, Step 0): an empty backlog is not a trigger to invent a new topic unattended — topic selection needs a human scope/YMYL pass. Deepak needs to add more vetted topics to `content/topic-backlog.json` (grams↔lbs scope, tier-1-country relevant, narrow `cautions` line for anything health/safety/finance-adjacent) before the next scheduled run (3x/week); otherwise that run will be a no-op too.
+- Still manual: Google Search Console submission is not applicable this run (nothing published).
+
 ## 2026-11-23
 - Published: Bullion & Vintage Coin Weight Standards: Grams to Pounds (https://gramstolbs.com/blog/vintage-coin-grams-to-pounds/) — 1,646 words, 6 FAQs
 - Angle: official minted gram/troy-ounce weight standards for named bullion and vintage coins (American Gold/Silver Eagle, Krugerrand, Canadian Maple Leaf, Austrian Philharmonic, Chinese Gold Panda, British sovereign and its fractional/multiple sizes, and vintage pre-1933 US gold denominations — double eagle, eagle, half eagle) converted to pounds, plus a tube/monster-box worked-example section and a minting-tolerance explainer. Per the backlog caution, stated only each coin's physical as-minted weight standard — no pricing, grading, or investment framing anywhere (the word "grading" appears once, neutrally, only to name coin condition terminology that was not otherwise used).
