@@ -4,6 +4,12 @@ Appended to automatically by the write-article pipeline after each scheduled
 run (3x/week). Newest entries at the top. This is what to check instead of
 reviewing every article — see `.claude/skills/write-article/SKILL.md`.
 
+## 2026-11-27
+- Skipped: backlog is still empty. `node tools/next-topic.js` returned `"topic": null, "remaining": 0`, same as the 2026-11-25 run — no new topics have been added to `content/topic-backlog.json` since then.
+- No article published, no files touched other than this digest entry, no draft written, nothing committed to `content/articles.json` or `content/topic-backlog.json`.
+- Per SOP (`.claude/skills/write-article/SKILL.md`, Step 0): an empty backlog is not a trigger to invent a new topic unattended. This is now at least two consecutive scheduled runs (3x/week) as a no-op. Deepak needs to add more vetted topics to `content/topic-backlog.json` (grams↔lbs scope, tier-1-country relevant, narrow `cautions` line for anything health/safety/finance-adjacent) — every run until then will be a no-op.
+- Still manual: Google Search Console submission is not applicable this run (nothing published).
+
 ## 2026-11-25
 - Skipped: backlog is empty. `node tools/next-topic.js` returned `"topic": null, "remaining": 0` — this was expected per the 2026-11-23 entry below, which flagged that the vintage-coin topic was the last open backlog entry.
 - No article published, no files touched other than this digest entry, no draft written, nothing committed to `content/articles.json` or `content/topic-backlog.json`.
